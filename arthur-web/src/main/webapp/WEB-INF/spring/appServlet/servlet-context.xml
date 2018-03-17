@@ -18,12 +18,15 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".html" />
 		<beans:property name="templateMode" value="HTML5" />
+		<beans:property name="characterEncoding" value="UTF-8" />
 	</beans:bean>
 	<beans:bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
 		<beans:property name="templateResolver" ref="templateResolver" />
 	</beans:bean>
 	<beans:bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
 		<beans:property name="templateEngine" ref="templateEngine" />
+		<!-- ここで設定していないとhtmlを描画時に日本語が文字化けする -->
+		<beans:property name="characterEncoding" value="UTF-8" />
 	</beans:bean>
 
 	<context:component-scan base-package="jp.co.arthur.web.controller" />

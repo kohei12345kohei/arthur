@@ -29,9 +29,9 @@ public class LoginController {
 		return "/login";
 	}
 
-	@PostMapping(value = "/login")
+	@PostMapping(value = "/menu")
 	public String toMenu(ModelMap modelMap, LoginForm loginForm) {
-		return "/login";
+		return "/menu";
 	}
 
 }
