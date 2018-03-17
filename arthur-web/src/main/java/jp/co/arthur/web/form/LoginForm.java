@@ -1,10 +1,12 @@
 package jp.co.arthur.web.form;
 
+import jp.co.arthur.common.web.BaseForm;
+
 /**
  * ログインフォームクラス<br>
  *
  */
-public class LoginForm {
+public class LoginForm implements BaseForm {
 
 	/** ログインID */
 	private String loginId;

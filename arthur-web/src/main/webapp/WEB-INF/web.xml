@@ -47,6 +47,8 @@
 		<url-pattern>/</url-pattern>
 		<!-- ログイン画面 -->
 		<url-pattern>/login</url-pattern>
+		<!-- メニュー画面 -->
+		<url-pattern>/menu</url-pattern>
 	</servlet-mapping>
 
 </web-app>
