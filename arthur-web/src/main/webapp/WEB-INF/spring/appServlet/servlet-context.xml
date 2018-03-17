@@ -31,5 +31,6 @@
 
 	<context:component-scan base-package="jp.co.arthur.web.controller" />
 	<context:component-scan base-package="jp.co.arthur.web.service.impl" />
+	<context:component-scan base-package="jp.co.arthur.web.config" />
 
 </beans:beans>

@@ -39,7 +39,8 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	 */
 	@Override
 	public ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response, LoginForm form) {
-		return ArthurView.LOGIN;
+
+		return ArthurView.MENU;
 	}
 
 }
