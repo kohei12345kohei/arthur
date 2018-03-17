@@ -1,4 +1,4 @@
-package jp.co.arthur;
+package jp.co.arthur.api.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
