@@ -32,6 +32,6 @@ public interface BaseSimpleGetController {
 	 * @param response
 	 * @return
 	 */
-	public ArthurView getView(Model model, HttpServletRequest request, HttpServletResponse response);
+	ArthurView getView(Model model, HttpServletRequest request, HttpServletResponse response);
 
 }

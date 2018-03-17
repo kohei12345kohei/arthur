@@ -34,6 +34,6 @@ public interface BaseSimplePostController<F extends BaseForm> {
 	 * @param response
 	 * @return
 	 */
-	public ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form);
+	ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form);
 
 }

@@ -4,6 +4,7 @@ public enum ArthurView {
 
 	/** ログイン画面 */
 	LOGIN("login"),
+	/** メニュー画面 */
 	MENU("menu");
 
 	private String value;
