@@ -21,10 +21,10 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	public LoginUser findLoginUserByLoginId(String loginId) {
 
 		LoginUser loginUser = new LoginUser();
-		loginUser.setLoginId(loginId);
-		loginUser.setPassword("password");
-		loginUser.setRegDate(new Date());
-		loginUser.setUpdateDate(new Date());
+//		loginUser.setLoginId(loginId);
+//		loginUser.setPassword("password");
+//		loginUser.setRegDate(new Date());
+//		loginUser.setUpdateDate(new Date());
 
 		return loginUser;
 	}

@@ -16,6 +16,7 @@ public class LoginUser {
 	private Date regDate;
 	/** 更新日時 */
 	private Date updateDate;
+
 	/**
 	 * loginIdを返す<br>
 	 * @return loginId
@@ -24,7 +25,7 @@ public class LoginUser {
 		return loginId;
 	}
 	/**
-	　* loginIdを設定する<br>
+	 * loginIdを設定する<br>
 	 * @param loginId
 	 */
 	public void setLoginId(String loginId) {
@@ -38,7 +39,7 @@ public class LoginUser {
 		return password;
 	}
 	/**
-	　* passwordを設定する<br>
+	 * passwordを設定する<br>
 	 * @param password
 	 */
 	public void setPassword(String password) {
@@ -52,7 +53,7 @@ public class LoginUser {
 		return regDate;
 	}
 	/**
-	　* regDateを設定する<br>
+	 * regDateを設定する<br>
 	 * @param regDate
 	 */
 	public void setRegDate(Date regDate) {
@@ -66,12 +67,11 @@ public class LoginUser {
 		return updateDate;
 	}
 	/**
-	　* updateDateを設定する<br>
+	 * updateDateを設定する<br>
 	 * @param updateDate
 	 */
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
-
 
 }
