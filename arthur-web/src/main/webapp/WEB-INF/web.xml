@@ -47,7 +47,6 @@
 
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
 		<!-- ログイン画面 -->
 		<url-pattern>/login</url-pattern>
 		<!-- メニュー画面 -->
