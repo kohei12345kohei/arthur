@@ -22,7 +22,7 @@ public interface BaseSimpleGetController {
 	@GetMapping
 	default String doGet(Model model, HttpServletRequest request, HttpServletResponse response) {
 		ArthurView view = this.getView(model, request, response);
-		return view.getValue();
+		return view.getUrl();
 	}
 
 	/**

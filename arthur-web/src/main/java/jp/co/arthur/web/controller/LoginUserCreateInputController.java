@@ -21,8 +21,7 @@ public class LoginUserCreateInputController implements BaseSimpleGetController {
 	 */
 	@Override
 	public ArthurView getView(Model model, HttpServletRequest request, HttpServletResponse response) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return ArthurView.LOGIN_USER_CREATE_INPUT;
 	}
 
 }
