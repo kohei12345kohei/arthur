@@ -10,9 +10,8 @@
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context.xsd">
 
-
-	<beans:bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl">
-	</beans:bean>
+	<!-- ログインDao -->
+	<beans:bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl" />
 
 
 
