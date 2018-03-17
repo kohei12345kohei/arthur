@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import jp.co.arthur.common.dao.LoginUserDao;
+import jp.co.arthur.common.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimpleGetController;
 import jp.co.arthur.common.web.BaseSimplePostController;
@@ -25,6 +27,8 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	/** ログインサービス */
 	@Autowired
 	private LoginService loginService;
+	@Autowired
+	private LoginUserDao loginUserDao;
 
 	/**
 	 * {@inheritDoc}
@@ -39,7 +43,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	 */
 	@Override
 	public ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response, LoginForm form) {
-
+		LoginUser entity = loginUserDao.findLoginUserByLoginId(form.getLoginId());
 		return ArthurView.MENU;
 	}
 
