@@ -1,11 +1,3 @@
-//function accountCreate() {
-//
-//}
-
-
-
-
-
 $(document).ready(function() {
 
   var animating = false,
