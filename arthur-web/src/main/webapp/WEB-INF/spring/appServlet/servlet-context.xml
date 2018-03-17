@@ -17,7 +17,7 @@
 	<beans:bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".html" />
-		<beans:property name="templateMode" value="HTML5" />
+		<beans:property name="templateMode" value="HTML" />
 		<beans:property name="characterEncoding" value="UTF-8" />
 	</beans:bean>
 	<beans:bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
@@ -31,5 +31,6 @@
 
 	<context:component-scan base-package="jp.co.arthur.web.controller" />
 	<context:component-scan base-package="jp.co.arthur.web.service.impl" />
+	<context:component-scan base-package="jp.co.arthur.web.config" />
 
 </beans:beans>

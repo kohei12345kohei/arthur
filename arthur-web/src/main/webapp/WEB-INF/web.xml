@@ -37,18 +37,26 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+			<param-value>
+				/WEB-INF/spring/appServlet/servlet-context.xml
+				/WEB-INF/spring/appServlet/arthur-context.xml
+			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
 		<!-- ログイン画面 -->
 		<url-pattern>/login</url-pattern>
 		<!-- メニュー画面 -->
 		<url-pattern>/menu</url-pattern>
+		<!-- ログインユーザ作成入力画面 -->
+		<url-pattern>/loginUserCreate-input</url-pattern>
+		<!-- ログインユーザ作成確認画面 -->
+		<url-pattern>/loginUserCreate-confirm</url-pattern>
+		<!-- ログインユーザ作成完了画面 -->
+		<url-pattern>/loginUserCreate-complete</url-pattern>
 	</servlet-mapping>
 
 </web-app>
