@@ -9,6 +9,13 @@ import java.util.Objects;
 public class StringUtil {
 
 	/**
+	 * プライベートコンストラクタ<br>
+	 */
+	private StringUtil() {
+
+	}
+
+	/**
 	 * 指定された文字列が空文字かどうか判定する<br>
 	 * @param target
 	 * @return
