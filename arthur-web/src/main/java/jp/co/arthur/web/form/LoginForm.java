@@ -6,7 +6,9 @@ package jp.co.arthur.web.form;
  */
 public class LoginForm {
 
+	/** ログインID */
 	private String loginId;
+	/** パスワード */
 	private String passeord;
 
 	/**
