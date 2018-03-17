@@ -19,7 +19,9 @@ $(document).ready(function() {
 	};
 
 	$(document).on("click", ".login__submit", function(e) {
-		if (animating) return;
+		if (animating) {
+			return;
+		}
 		animating = true;
 		var that = this;
 		ripple($(that), e);
@@ -40,8 +42,26 @@ $(document).ready(function() {
 		}, submitPhase1);
 	});
 
+
+	var loginButton = document.getElementById('login');
+	loginButton.addEventListener('click', function() {
+		var form = document.loginForm;
+		var loginRowClassList = form.getElementsByClassName('login__row');
+		// ログインID取得
+		var loginClass = loginRowClassList[0].getElementsByClassName('login__input name');
+		var loginId = loginClass.loginId.value;
+
+		// パスワード取得
+		var loginClass = loginRowClassList[0].getElementsByClassName('login__input name');
+		var loginId = loginClass.loginId.value;
+		form.submit();
+	});
+
+
 	$(document).on("click", ".app__logout", function(e) {
-		if (animating) return;
+		if (animating) {
+			return;
+		}
 		$(".ripple").remove();
 		animating = true;
 		var that = this;

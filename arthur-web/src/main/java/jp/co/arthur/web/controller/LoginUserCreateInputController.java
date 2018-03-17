@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimpleGetController;
@@ -14,6 +15,7 @@ import jp.co.arthur.common.web.BaseSimpleGetController;
  *
  */
 @Controller
+@RequestMapping(value = "/loginUserCreate-input")
 public class LoginUserCreateInputController implements BaseSimpleGetController {
 
 	/**
