@@ -8,10 +8,15 @@ import jp.co.arthur.common.entity.LoginUser;
  */
 public interface LoginUserDao {
 
+	/** テーブル名 */
+	public static final String TABLE_NAME = "LOGIN_USER";
+
 	/**
 	 * ログインIDからログインユーザを返す<br>
 	 * @param loginId
 	 * @return
 	 */
 	LoginUser findLoginUserByLoginId(String loginId);
+
+
 }

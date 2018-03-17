@@ -24,7 +24,7 @@ public interface BaseSimplePostController<F extends BaseForm> {
 	@PostMapping
 	default String doPost(Model model, HttpServletRequest request, HttpServletResponse response, F form) {
 		ArthurView view = this.postView(model, request, response, form);
-		return view.getValue();
+		return view.getUrl();
 	}
 
 	/**

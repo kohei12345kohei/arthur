@@ -44,6 +44,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	@Override
 	public ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response, LoginForm form) {
 		LoginUser entity = loginUserDao.findLoginUserByLoginId(form.getLoginId());
+		System.out.println(entity.getLoginId());
 		return ArthurView.MENU;
 	}
 

@@ -1,5 +1,9 @@
 package jp.co.arthur.common.web;
 
+/**
+ * アーサーURL定義<br>
+ *
+ */
 public enum ArthurView {
 
 	/** ログイン画面 */
@@ -13,13 +17,17 @@ public enum ArthurView {
 	/** ログインユーザ作成完了画面 */
 	LOGIN_USER_CREATE_COMPLETE("loginUserCreate-complete");
 
-	private String value;
+	private String url;
 
-	private ArthurView(String value) {
-		this.value = value;
+	private ArthurView(String url) {
+		this.url = url;
 	}
 
-	public String getValue() {
-		return value;
+	/**
+	 * 値を返す<br>
+	 * @return
+	 */
+	public String getUrl() {
+		return url;
 	}
 }
