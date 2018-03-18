@@ -18,6 +18,7 @@
 		<org.thymeleaf-version>3.0.9.RELEASE</org.thymeleaf-version>
 		<org.aspectj-version>1.8.13</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
+		<poi-version>3.17</poi-version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +56,18 @@
 			<groupId>org.thymeleaf</groupId>
 			<artifactId>thymeleaf-spring5</artifactId>
 			<version>${org.thymeleaf-version}</version>
+		</dependency>
+
+		<!-- poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi-version}</version>
 		</dependency>
 
 		<!-- AspectJ -->

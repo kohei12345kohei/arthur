@@ -1,0 +1,23 @@
+input {
+	height: 50px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 200px;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-moz-border-radius: 3px;
+	transition: all .3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	width: 300px;
+	box-shadow: 0 0 7px #e64545;
+	border: 1px solid #e64545;
+}
+
+input[type="submit"] {
+
+}

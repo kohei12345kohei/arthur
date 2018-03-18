@@ -6,12 +6,15 @@ package jp.co.arthur.common.exception;
  */
 public enum ArthurErrorCode {
 
-	WA00001("WA00001", "");
+	WA00001("WA00001", ""),
+
+	EMPTY("empty", "");
 
 	private ArthurErrorCode(String errorCode, String errorMessage) {
 		this.errorCode = errorCode;
 		this.errorMessage = errorMessage;
 	}
+
 	/** エラーコード */
 	private String errorCode;
 	/** エラーメッセージ */
@@ -24,6 +27,7 @@ public enum ArthurErrorCode {
 	public String getErrorCode() {
 		return errorCode;
 	}
+
 	/**
 	 * errorMessageを返す<br>
 	 * @return errorMessage

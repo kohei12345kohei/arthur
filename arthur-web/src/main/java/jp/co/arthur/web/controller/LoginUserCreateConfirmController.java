@@ -5,11 +5,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimplePostController;
 import jp.co.arthur.web.form.LoginUserCreateForm;
+import jp.co.arthur.web.validator.LoginUserCreateValidator;
 
 /**
  * ログインユーザ作成確認コントローラクラス<br>
@@ -20,16 +24,22 @@ import jp.co.arthur.web.form.LoginUserCreateForm;
 public class LoginUserCreateConfirmController implements BaseSimplePostController<LoginUserCreateForm> {
 
 	/**
+	 * ログインユーザ作成確認画面<br>
+	 */
+	@Override
+	public ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response,
+			LoginUserCreateForm form, BindingResult result) {
+
+		return ArthurView.LOGIN_USER_CREATE_CONFIRM;
+	}
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public ArthurView postView(Model model
-							, HttpServletRequest request
-							, HttpServletResponse response
-							, LoginUserCreateForm form) {
-
-
-		return ArthurView.LOGIN_USER_CREATE_CONFIRM;
+	@InitBinder("LoginUserCreateForm")
+	public void initBinder(WebDataBinder binder) {
+		binder.setValidator(new LoginUserCreateValidator());
 	}
 
 }
