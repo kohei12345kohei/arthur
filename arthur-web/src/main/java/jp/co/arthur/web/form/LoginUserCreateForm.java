@@ -1,7 +1,5 @@
 package jp.co.arthur.web.form;
 
-import org.springframework.validation.Validator;
-
 import jp.co.arthur.common.web.BaseForm;
 
 /**

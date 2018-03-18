@@ -10,7 +10,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.springframework.stereotype.Repository;
 
 import jp.co.arthur.common.dao.LoginUserDao;
 import jp.co.arthur.common.entity.LoginUser;
@@ -21,7 +20,6 @@ import jp.co.arthur.common.util.DateUtil;
  * ログインユーザDao実装クラス<br>
  *
  */
-@Repository
 public class LoginUserDaoImpl implements LoginUserDao {
 
 	/** 保存先ファイルパス */
@@ -45,7 +43,9 @@ public class LoginUserDaoImpl implements LoginUserDao {
 				Row row = iteRow.next();
 
 				// ヘッダーの場合、次のレコードに進む
-				if (row.getRowNum() == 0) continue;
+				if (row.getRowNum() == 0) {
+					continue;
+				}
 
 				if (loginId.equals(row.getCell(0).getStringCellValue())) {
 

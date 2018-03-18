@@ -4,28 +4,34 @@
 <title>ユーザ作成入力画面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="resources/css/common/table.css">
+<link rel="stylesheet" type="text/css" href="resources/css/common/form.css">
+<link rel="stylesheet" type="text/css" href="resources/css/common/baseLayout.css">
 <script type="text/javascript" src="resources/js/jquery-3.3.1.js"></script>
 </head>
 <body>
-
-<form action="/arthur/loginUserCreate-confirm">
-<table class="table">
-    <tbody>
-        <tr>
-            <th class="arrow_box">ログインID</th>
-            <td><input type="text" name="loginId" /></td>
-        </tr>
-        <tr>
-            <th class="arrow_box">パスワード</th>
-            <td><input type="password" name="password" /></td>
-        </tr>
-        <tr>
-            <th class="arrow_box">パスワード(確認用)</th>
-            <td><input type="password" name="confirmPassword" /></td>
-        </tr>
-    </tbody>
-</table>
-</form>
-
+	<div class="center">
+		<form action="/arthur/loginUserCreate-confirm" method="post">
+			<table class="table">
+				<tr>
+					<th>ログインID</th>
+					<td><input type="text" name="loginId" /></td>
+				</tr>
+				<tr>
+					<th>パスワード</th>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<th>パスワード<br>(確認用)
+					</th>
+					<td><input type="password" name="confirmPassword" /></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><input type="submit" value="確認" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
 </body>
 </html>

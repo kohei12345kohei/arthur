@@ -1,6 +1,6 @@
 package jp.co.arthur.web.service;
 
-import jp.co.arthur.web.form.LoginForm;
+import jp.co.arthur.common.entity.LoginUser;
 
 /**
  * ログインサービス<br>
@@ -8,6 +8,12 @@ import jp.co.arthur.web.form.LoginForm;
  */
 public interface LoginService {
 
-	boolean isAuth(LoginForm form);
+	/**
+	 * ログインフォームがログイン可能かどうか判定する<br>
+	 * @param entity
+	 * @param loginId
+	 * @return
+	 */
+	boolean isAuth(LoginUser entity, String loginId);
 
 }
