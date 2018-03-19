@@ -4,7 +4,7 @@ package jp.co.arthur.common.web;
  * アーサーURL定義<br>
  *
  */
-public enum ArthurView {
+public enum ArthurView implements BaseView {
 
 	/** ログイン画面 */
 	LOGIN("login"),
@@ -24,10 +24,24 @@ public enum ArthurView {
 	}
 
 	/**
-	 * 値を返す<br>
-	 * @return
+	 * {@inheritDoc}
 	 */
+	@Override
 	public String getUrl() {
 		return url;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public BaseView of(String url) {
+
+		for (ArthurView view : ArthurView.class.getEnumConstants()) {
+			if (view.url.equals(url)) {
+				return view;
+			}
+		}
+		return null;
 	}
 }
