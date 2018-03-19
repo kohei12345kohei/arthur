@@ -30,6 +30,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	/** ログインサービス */
 	@Autowired
 	private LoginService loginService;
+	/** ログインDao */
 	@Autowired
 	private LoginUserDao loginUserDao;
 

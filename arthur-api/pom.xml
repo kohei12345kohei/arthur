@@ -138,11 +138,11 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
+<!-- 		<dependency>
 			<groupId>jp.co</groupId>
 			<artifactId>arthur</artifactId>
 			<version>1.0.0-BUILD-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<build>
