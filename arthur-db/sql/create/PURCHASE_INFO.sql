@@ -7,9 +7,9 @@ create table PURCHASE_INFO (
     -- 商品名
     ITEM_NAME varchar2(64),
     -- 商品金額(単品)
-    ITEM_UNIT_MONEY varchar2(8),
+    ITEM_UNIT_MONEY number,
     -- 商品数
-    ITEM_ varchar2(8),
+    ITEM_ number,
     -- 登録日時
     REG_DATE date
 )
