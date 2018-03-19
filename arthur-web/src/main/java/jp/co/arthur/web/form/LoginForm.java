@@ -14,29 +14,32 @@ public class LoginForm implements BaseForm {
 	private String passeord;
 
 	/**
+	 * loginIdを返す<br>
 	 * @return loginId
 	 */
 	public String getLoginId() {
 		return loginId;
 	}
 	/**
-	 * @param loginId セットする loginId
+	 * loginIdを設定する<br>
+	 * @param loginId
 	 */
 	public void setLoginId(String loginId) {
 		this.loginId = loginId;
 	}
 	/**
+	 * passeordを返す<br>
 	 * @return passeord
 	 */
 	public String getPasseord() {
 		return passeord;
 	}
 	/**
-	 * @param passeord セットする passeord
+	 * passeordを設定する<br>
+	 * @param passeord
 	 */
 	public void setPasseord(String passeord) {
 		this.passeord = passeord;
 	}
-
 
 }
