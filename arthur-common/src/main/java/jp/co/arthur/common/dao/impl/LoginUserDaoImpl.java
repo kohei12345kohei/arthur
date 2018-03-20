@@ -16,7 +16,9 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import jp.co.arthur.common.dao.LoginUserDao;
 import jp.co.arthur.common.entity.LoginUser;
+import jp.co.arthur.common.other.Insert;
 import jp.co.arthur.common.other.OsDefine;
+import jp.co.arthur.common.other.Select;
 import jp.co.arthur.common.util.DateFormat;
 import jp.co.arthur.common.util.DateUtil;
 
@@ -32,6 +34,7 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Select
 	@Override
 	public LoginUser findLoginUserByLoginId(String loginId) {
 
@@ -75,6 +78,7 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Insert
 	@Override
 	public void insertLoginUser(LoginUser entity) {
 

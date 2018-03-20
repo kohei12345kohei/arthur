@@ -3,6 +3,10 @@ package jp.co.arthur.common.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 購入商品情報Entity
+ *
+ */
 public class PurchaseInfo {
 
 	/** アカウント */

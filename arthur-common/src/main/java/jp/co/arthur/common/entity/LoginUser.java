@@ -3,7 +3,7 @@ package jp.co.arthur.common.entity;
 import java.util.Date;
 
 /**
- * ログインユーザEntityクラス<br>
+ * ログインユーザEntity<br>
  *
  */
 public class LoginUser {
