@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonUtil {
 
 	/**
-	 * プライベートコンストラクタ<br>
+	 * プラｲベートコンストラクタ<br>
 	 */
 	private JsonUtil() {
 	}
