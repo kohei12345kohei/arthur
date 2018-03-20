@@ -58,8 +58,9 @@ public class LoginUserDaoImpl implements LoginUserDao {
 
 					loginUser.setLoginId(row.getCell(0).getStringCellValue());
 					loginUser.setPassword(row.getCell(1).getStringCellValue());
-					loginUser.setRegDate(DateUtil.formatDate(row.getCell(2).getStringCellValue()));
-					loginUser.setUpdateDate(DateUtil.formatDate(row.getCell(3).getStringCellValue()));
+					loginUser.setAccount(row.getCell(2).getStringCellValue());
+					loginUser.setRegDate(DateUtil.formatDate(row.getCell(3).getStringCellValue()));
+					loginUser.setUpdateDate(DateUtil.formatDate(row.getCell(4).getStringCellValue()));
 
 				}
 			}

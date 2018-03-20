@@ -27,3 +27,25 @@
 	display: -webkit-flex;
 	display: flex;
 }
+
+.container {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr /* 3fr */;
+	grid-template-rows: 400px 400px 400px 400px auto;
+}
+
+.item {
+	background: #ddd;
+	padding: 10px;
+	border-radius: 8px;
+	border: 5px solid #ccc;
+}
+
+img.menuIcon {
+	border: 0;
+	width: 95px;
+}
+div.item:hover {
+	background-color: #e8837f;
+}
