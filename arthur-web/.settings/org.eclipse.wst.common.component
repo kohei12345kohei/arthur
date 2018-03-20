@@ -7,6 +7,9 @@
         <dependent-module archiveName="arthur-1.0.0-BUILD-SNAPSHOT.war" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-common/arthur-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="arthur-api-1.0.0-BUILD-SNAPSHOT.war" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-api/arthur-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
 		<property name="java-output-path" value="target/classes"/>
         <property name="context-root" value="arthur-web"/>
 	</wb-module>

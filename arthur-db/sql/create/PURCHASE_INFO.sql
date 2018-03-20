@@ -1,6 +1,6 @@
 -- 購入商品情報
 create table PURCHASE_INFO (
-    -- ログインID
+    -- アカウント名
     ACCOUNT varchar2(16),
     -- 商品ID
     ITEM_ID varchar2(16),
