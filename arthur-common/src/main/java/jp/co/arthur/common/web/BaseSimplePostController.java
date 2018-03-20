@@ -31,8 +31,7 @@ public interface BaseSimplePostController<F extends BaseForm> {
 	 * @return
 	 */
 	@PostMapping
-	default String doPost(Model model, HttpServletRequest request, HttpServletResponse response, F form,
-			BindingResult result) {
+	default String doPost(Model model, HttpServletRequest request, HttpServletResponse response, F form, BindingResult result) {
 		BaseView view = this.postView(model, request, response, form, result);
 		return view.getUrl();
 	}
@@ -46,7 +45,6 @@ public interface BaseSimplePostController<F extends BaseForm> {
 	 * @param result
 	 * @return
 	 */
-	BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form,
-			BindingResult result);
+	BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form, BindingResult result);
 
 }
