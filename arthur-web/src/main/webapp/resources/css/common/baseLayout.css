@@ -1,5 +1,7 @@
 * {
-	font-family: arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 .center {
@@ -9,6 +11,7 @@
 .title {
 	border-left: 15px solid #f09199;
 	padding: 7px;
+	margin: 3px;
 	background: #efd7d9;
 }
 
@@ -31,21 +34,23 @@
 .container {
 	display: grid;
 	grid-gap: 10px;
-	grid-template-columns: 1fr 1fr 1fr /* 3fr */;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 400px 400px 400px 400px auto;
 }
 
 .item {
-	background: #ddd;
+	background: #e8837f;
 	padding: 10px;
 	border-radius: 8px;
-	border: 5px solid #ccc;
+	border: 5px solid #e8837f;
 }
 
 img.menuIcon {
 	border: 0;
-	width: 95px;
+	width: 90px;
 }
+
 div.item:hover {
-	background-color: #e8837f;
+	background-color: #F5A9A9;
+	border-color: #F5A9A9;
 }
