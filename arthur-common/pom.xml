@@ -92,6 +92,19 @@
 			<version>${org.jackson-version}</version>
 		</dependency>
 
+		<!-- guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>24.1-jre</version>
+		</dependency>
+		<!-- googleAPI -->
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-genomics</artifactId>
+			<version>v1-rev545-1.23.0</version>
+		</dependency>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>

@@ -16,6 +16,7 @@ import jp.co.arthur.common.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimpleGetController;
 import jp.co.arthur.common.web.BaseSimplePostController;
+import jp.co.arthur.common.web.BaseView;
 import jp.co.arthur.web.form.LoginForm;
 import jp.co.arthur.web.service.LoginService;
 
@@ -38,7 +39,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	 * {@inheritDoc}
 	 */
 	@Override
-	public ArthurView getView(Model model, HttpServletRequest request, HttpServletResponse response) {
+	public BaseView getView(Model model, HttpServletRequest request, HttpServletResponse response) {
 		return ArthurView.LOGIN;
 	}
 
@@ -46,7 +47,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	 * {@inheritDoc}
 	 */
 	@Override
-	public ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response, LoginForm form, BindingResult result) {
+	public BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, LoginForm form, BindingResult result) {
 
 		LoginUser entity = loginUserDao.findLoginUserByLoginId(form.getLoginId());
 		System.out.println(entity.getLoginId());

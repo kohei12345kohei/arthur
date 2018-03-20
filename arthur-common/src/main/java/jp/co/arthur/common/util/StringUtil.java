@@ -1,6 +1,6 @@
 package jp.co.arthur.common.util;
 
-import java.util.Objects;
+import com.google.common.base.Strings;
 
 /**
  * 文字列のUtilクラス<br>
@@ -23,7 +23,7 @@ public class StringUtil {
 	 * @return
 	 */
 	public static boolean isEmpty(String target) {
-		return Objects.isNull(target) || target.length() < 1;
+		return Strings.isNullOrEmpty(target);
 	}
 
 	/**

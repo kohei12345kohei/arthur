@@ -33,7 +33,7 @@ public interface BaseSimplePostController<F extends BaseForm> {
 	@PostMapping
 	default String doPost(Model model, HttpServletRequest request, HttpServletResponse response, F form,
 			BindingResult result) {
-		ArthurView view = this.postView(model, request, response, form, result);
+		BaseView view = this.postView(model, request, response, form, result);
 		return view.getUrl();
 	}
 
@@ -46,7 +46,7 @@ public interface BaseSimplePostController<F extends BaseForm> {
 	 * @param result
 	 * @return
 	 */
-	ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form,
+	BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form,
 			BindingResult result);
 
 }

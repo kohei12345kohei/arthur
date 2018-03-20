@@ -12,6 +12,8 @@ public class LoginUser {
 	private String loginId;
 	/** パスワード */
 	private String password;
+	/** アカウント名 */
+	private String account;
 	/** 登録日時 */
 	private Date regDate;
 	/** 更新日時 */
@@ -44,6 +46,21 @@ public class LoginUser {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	/**
+	 * accountを返す<br>
+	 * @return account
+	 */
+	public String getAccount() {
+		return account;
+	}
+	/**
+	 * accountを設定する<br>
+	 * @param account
+	 */
+	public void setAccount(String account) {
+		this.account = account;
 	}
 	/**
 	 * regDateを返す<br>

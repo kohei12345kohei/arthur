@@ -1,6 +1,9 @@
 package jp.co.arthur.common.dao.impl;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -14,6 +17,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import jp.co.arthur.common.dao.LoginUserDao;
 import jp.co.arthur.common.entity.LoginUser;
 import jp.co.arthur.common.other.OsDefine;
+import jp.co.arthur.common.util.DateFormat;
 import jp.co.arthur.common.util.DateUtil;
 
 /**
@@ -66,6 +70,41 @@ public class LoginUserDaoImpl implements LoginUserDao {
 		}
 
 		return loginUser;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void insertLoginUser(LoginUser entity) {
+
+		try (FileInputStream in = new FileInputStream(RESOURCES);
+				Workbook workbook = WorkbookFactory.create(in);
+				FileOutputStream fos = new FileOutputStream(RESOURCES)) {
+			Sheet sheet = workbook.getSheet(TABLE_NAME);
+
+			Row newRow = sheet.createRow(sheet.getLastRowNum() + 1);
+
+			newRow.createCell(0).setCellValue(entity.getLoginId());
+			newRow.createCell(1).setCellValue(entity.getPassword());
+			newRow.createCell(2).setCellValue(entity.getAccount());
+			newRow.createCell(3).setCellValue(DateUtil.toString(entity.getRegDate(), DateFormat.YYYYMMDD_HHMMSS));
+			newRow.createCell(4).setCellValue(DateUtil.toString(entity.getUpdateDate(), DateFormat.YYYYMMDD_HHMMSS));
+
+			fos.flush();
+			workbook.write(fos);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (EncryptedDocumentException e) {
+			e.printStackTrace();
+		} catch (InvalidFormatException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
