@@ -21,7 +21,7 @@ public interface BaseSimpleGetController {
 	 */
 	@GetMapping
 	default String doGet(Model model, HttpServletRequest request, HttpServletResponse response) {
-		ArthurView view = this.getView(model, request, response);
+		BaseView view = this.getView(model, request, response);
 		return view.getUrl();
 	}
 
@@ -32,6 +32,6 @@ public interface BaseSimpleGetController {
 	 * @param response
 	 * @return
 	 */
-	ArthurView getView(Model model, HttpServletRequest request, HttpServletResponse response);
+	BaseView getView(Model model, HttpServletRequest request, HttpServletResponse response);
 
 }

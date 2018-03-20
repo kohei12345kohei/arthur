@@ -18,5 +18,10 @@ public interface LoginUserDao {
 	 */
 	LoginUser findLoginUserByLoginId(String loginId);
 
+	/**
+	 * 指定されたEntityを作成する<br>
+	 * @param entity
+	 */
+	void insertLoginUser(LoginUser entity);
 
 }

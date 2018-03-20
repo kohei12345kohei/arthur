@@ -12,7 +12,7 @@ import java.util.Objects;
 public class DateUtil {
 
 	/**
-	 * プラｲベートコンストラクタ<br>
+	 * プライベートコンストラクタ<br>
 	 */
 	private DateUtil() {
 	}
