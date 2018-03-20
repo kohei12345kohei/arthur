@@ -24,7 +24,7 @@ public class StringUtil {
 	public static final String EQUAL = "=";
 
 	/**
-	 * プラｲベートコンストラクタ<br>
+	 * プライベートコンストラクタ<br>
 	 */
 	private StringUtil() {
 	}
