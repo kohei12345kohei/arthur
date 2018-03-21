@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.common.dao.LoginUserDao;
 import jp.co.arthur.common.entity.LoginUser;
+import jp.co.arthur.common.exception.ArthurErrorCode;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimpleGetController;
 import jp.co.arthur.common.web.BaseSimplePostController;
@@ -50,9 +51,9 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	public BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, LoginForm form, BindingResult result) {
 
 		LoginUser entity = loginUserDao.findLoginUserByLoginId(form.getLoginId());
-		System.out.println(entity.getLoginId());
 
-		if (!loginService.isAuth(entity, form.getLoginId())) {
+		if (!loginService.isAuth(entity, form.getPassword())) {
+			model.addAttribute("errorMessage", ArthurErrorCode.LOGIN_FAILED.getErrorMessage());
 			// パスワードが間違っていた場合
 			return ArthurView.LOGIN;
 		}

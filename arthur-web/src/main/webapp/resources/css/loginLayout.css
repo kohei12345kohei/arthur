@@ -573,6 +573,12 @@ input, button {
 	border-radius: 50%;
 }
 
+.errorMessage {
+	text-align: center;
+	font-size: 20px;
+	color: white;
+}
+
 @
 -webkit-keyframes animRipple {to { -webkit-transform:scale(3.5);
 	transform: scale(3.5);

@@ -9,11 +9,11 @@ import jp.co.arthur.common.entity.LoginUser;
 public interface LoginService {
 
 	/**
-	 * ログインフォームがログイン可能かどうか判定する<br>
+	 * 入力したパスワードがEntityのパスワードが一致しているかどうか確認する<br>
 	 * @param entity
-	 * @param loginId
+	 * @param password
 	 * @return
 	 */
-	boolean isAuth(LoginUser entity, String loginId);
+	boolean isAuth(LoginUser entity, String password);
 
 }

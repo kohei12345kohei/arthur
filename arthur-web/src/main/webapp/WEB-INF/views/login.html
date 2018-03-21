@@ -10,9 +10,10 @@
 <script type="text/javascript" src="resources/js/loginUserCreate.js"></script>
 </head>
 <body>
-	<!-- <p th:text="#{home.welcome}">Welcome to our grocery store!</p> -->
-
 	<div class="cont">
+		<div>
+			<p th:text="${errorMessage}" class="errorMessage"></p>
+		</div>
 		<div class="demo">
 			<div class="login">
 				<div class="login__check"></div>

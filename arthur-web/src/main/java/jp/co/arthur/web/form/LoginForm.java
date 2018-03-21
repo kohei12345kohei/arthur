@@ -11,7 +11,7 @@ public class LoginForm implements BaseForm {
 	/** ログインID */
 	private String loginId;
 	/** パスワード */
-	private String passeord;
+	private String password;
 
 	/**
 	 * loginIdを返す<br>
@@ -28,18 +28,19 @@ public class LoginForm implements BaseForm {
 		this.loginId = loginId;
 	}
 	/**
-	 * passeordを返す<br>
-	 * @return passeord
+	 * passwordを返す<br>
+	 * @return password
 	 */
-	public String getPasseord() {
-		return passeord;
+	public String getPassword() {
+		return password;
 	}
 	/**
-	 * passeordを設定する<br>
-	 * @param passeord
+	 * passwordを設定する<br>
+	 * @param password
 	 */
-	public void setPasseord(String passeord) {
-		this.passeord = passeord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
 
 }
