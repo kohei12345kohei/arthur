@@ -13,6 +13,12 @@
 <h3 class="title">オンラインメニュー<br></h3>
 	<!-- タイルメニュー -->
 	<div class="container">
+		<!-- ユーザ情報 -->
+		<div class="userInfoItem"><p th:text="${account}" class="account"></p></div>
+		<!-- 設定 -->
+		<div class="settingItem" onclick="toSetting()"><img class="menuIcon" src="resources/image/setting.png" /></div>
+		<!-- ログアウト -->
+		<div class="logoutItem" onclick="toLogout()"><img class="menuIcon" src="resources/image/logout.png" /></div>
 		<!-- 購入 -->
 		<div class="purchaseItem" onclick="toPurchase()"><img class="menuIcon" src="resources/image/find.png" /></div>
 		<!-- カート内確認 -->
@@ -21,10 +27,6 @@
 		<div class="cartDeleteItem" onclick="toCartDelete()"><img class="menuIcon" src="resources/image/emptyShoppingCart.png" /></div>
 		<!-- 履歴 -->
 		<div class="historyItem" onclick="toHistory()"><img class="menuIcon" src="resources/image/history.png" /></div>
-		<!-- 設定 -->
-		<div class="settingItem" onclick="toSetting()"><img class="menuIcon" src="resources/image/setting.png" /></div>
-		<!-- ログアウト -->
-		<div class="logoutItem" onclick="toLogout()"><img class="menuIcon" src="resources/image/logout.png" /></div>
 	</div>
 
 

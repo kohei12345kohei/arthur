@@ -60,8 +60,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 
 		// sessionにアカウントを保持（画面描画時のアカウント表示に使う為）
 		request.getSession().setAttribute("account", entity.getAccount());
-
-
+		model.addAttribute("account", entity.getAccount());
 
 		return ArthurView.MENU;
 	}
