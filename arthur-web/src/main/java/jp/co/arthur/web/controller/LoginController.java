@@ -52,7 +52,17 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 		LoginUser entity = loginUserDao.findLoginUserByLoginId(form.getLoginId());
 		System.out.println(entity.getLoginId());
 
-		return loginService.isAuth(entity, form.getLoginId()) ? ArthurView.MENU : ArthurView.LOGIN;
+		if (!loginService.isAuth(entity, form.getLoginId())) {
+			// パスワードが間違っていた場合
+			return ArthurView.LOGIN;
+		}
+
+		// sessionにアカウントを保持（画面描画時のアカウント表示に使う為）
+		request.getSession().setAttribute("account", entity.getAccount());
+
+
+
+		return ArthurView.MENU;
 	}
 
 	/**

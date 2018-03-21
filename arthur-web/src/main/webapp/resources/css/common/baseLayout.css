@@ -61,19 +61,19 @@
 }
 
 .settingItem {
-	background: #e8837f;
+	background: #848484;
 	padding: 10px;
 	border-radius: 8px;
-	border: 5px solid #e8837f;
+	border: 5px solid #848484;
 	grid-column: 1/1;
 	grid-row: 4/5;
 }
 
 .logoutItem {
-	background: #e8837f;
+	background: #848484;
 	padding: 10px;
 	border-radius: 8px;
-	border: 5px solid #e8837f;
+	border: 5px solid #848484;
 	grid-column: 2/2;
 	grid-row: 4/5;
 }
@@ -84,8 +84,13 @@ img.menuIcon {
 }
 
 .purchaseItem:hover, .cartCheckItem:hover, .cartDeleteItem:hover,
-	.historyItem:hover, .settingItem:hover, .logoutItem:hover {
+	.historyItem:hover {
 	background-color: #F5A9A9;
 	border-color: #F5A9A9;
+}
+
+.settingItem:hover, .logoutItem:hover {
+	background-color: #A4A4A4;
+	border-color: #A4A4A4;
 }
 /* ここまで */
