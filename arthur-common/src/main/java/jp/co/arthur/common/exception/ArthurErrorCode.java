@@ -6,9 +6,25 @@ package jp.co.arthur.common.exception;
  */
 public enum ArthurErrorCode {
 
-	WA00001("WA00001", ""),
+	// -----E系-----
+	/** システムエラー */
+	EA00001("EA00001", "システムエラーです"),
+	/** DBアクセスエラー */
+	EA00002("EA00001", "DBアクセスエラーです"),
 
-	EMPTY("empty", "");
+	// -----login-----
+	LOGIN_FAILED("EB00001", "パスワードが間違っています"),
+
+	// -----validate-----
+	/** 空文字エラー */
+	EMPTY("empty", "空文字が指定されています"),
+	/** 必須エラー */
+	REQUIRE("require", "必須項目が入力されていません"),
+	/** 桁数超過エラー */
+	LENGTH_OVER("lengthOver", "桁数が超過しています"),
+	/** 桁数超過エラー */
+	LENGTH_LACK("lengthLack", "桁数が不足しています"),
+	;
 
 	private ArthurErrorCode(String errorCode, String errorMessage) {
 		this.errorCode = errorCode;

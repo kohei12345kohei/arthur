@@ -16,8 +16,8 @@ public class LoginServiceImpl implements LoginService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean isAuth(LoginUser entity, String loginId) {
-		return entity.getLoginId().equals(loginId);
+	public boolean isAuth(LoginUser entity, String password) {
+		return entity.getPassword().equals(password);
 	}
 
 
