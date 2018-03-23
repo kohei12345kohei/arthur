@@ -24,7 +24,7 @@ public class ArthurExceptionHandler implements BaseExceptionHandler, HandlerExce
 										, Exception e) {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("error");
-		return null;
+		return model;
 	}
 
 }
