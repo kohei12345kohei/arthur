@@ -2,6 +2,8 @@ package jp.co.arthur.common.exception;
 
 import java.util.StringJoiner;
 
+import jp.co.arthur.common.util.StringUtil;
+
 /**
  * 基底例外クラス<br>
  *
@@ -51,7 +53,7 @@ public abstract class BaseArthurException extends Exception {
 	 */
 	@Override
 	public String toString() {
-		StringJoiner joiner = new StringJoiner(" ");
+		StringJoiner joiner = new StringJoiner(StringUtil.SPACE);
 		joiner.add(this.errorCode.getErrorCode());
 		joiner.add(this.errorCode.getErrorMessage());
 		joiner.add(this.execptionMessage);
