@@ -10,7 +10,8 @@ import jp.co.arthur.common.exception.BaseArthurException;
 
 /**
  * API基底コントローラインターフェース<br>
- *
+ * @param <Rq> リクエストクラス
+ * @param <Rs> レスポンスクラス
  */
 public interface BaseApiController<Rq extends BaseApiRequest, Rs extends BaseApiResponse> {
 
@@ -43,10 +44,11 @@ public interface BaseApiController<Rq extends BaseApiRequest, Rs extends BaseApi
 	}
 
 	/**
-	 * 継承先で主処理を実装>br>
+	 * 継承先で主処理を実装<br>
 	 * @param req
 	 * @param resp
 	 * @return
+	 * @throws BaseArthurException
 	 */
 	Rs execute(HttpServletRequest req, HttpServletResponse resp) throws BaseArthurException;
 
