@@ -13,7 +13,7 @@ import jp.co.arthur.common.exception.BaseArthurException;
  * @param <Rq> リクエストクラス
  * @param <Rs> レスポンスクラス
  */
-public interface BaseApiController<Rq extends BaseApiRequest, Rs extends BaseApiResponse> {
+public interface BaseApiRestController<Rq extends BaseApiRequest, Rs extends BaseApiResponse> {
 
 	/**
 	 * GET通信での処理を行う<br>

@@ -2,22 +2,43 @@ input {
 	height: 50px;
 }
 
+/* 入力タグの設定 */
 input[type="text"], input[type="password"] {
 	width: 200px;
 	border: 1px solid #DDD;
 	border-radius: 3px;
-	-webkit-transition: all .3s;
-	-moz-transition: all .3s;
+	-webkit-transition: all 1.0s;
+	-moz-transition: all 1.0s;
 	-moz-border-radius: 3px;
-	transition: all .3s;
+	transition: all 1.0s;
 }
 
+/* 入力タグにマウスオーバーしたとき */
 input[type="text"]:focus, input[type="password"]:focus {
 	width: 300px;
 	box-shadow: 0 0 7px #e64545;
 	border: 1px solid #e64545;
 }
 
-input[type="submit"] {
-
+/* 送信ボタンの設定 */
+input[type="submit"], input[type="button"] {
+	background: #f16272;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	height: 50px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+	text-align: center;
+	text-transform: uppercase;
+	transition: background 0.3s ease-in-out;
+	width: 100%;
 }
+
+/* 送信ボタンにマウスオーバーしたとき */
+input[type="submit"]:hover, input[type="button"]:hover {
+	background: #ee3e52;
+}
+
+

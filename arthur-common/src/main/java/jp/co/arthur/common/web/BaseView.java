@@ -14,9 +14,20 @@ public interface BaseView {
 	String getUrl();
 
 	/**
-	 * URLと一致するviewを返す<br>
-	 * @param url
+	 * 指定したEnumクラスの指定した値と一致するEnumを返す<br>
+	 * 一致するenumがない場合nullを返す<br>
+	 * @param viewClass BaseViewを継承したViewのEnum
+	 * @param value 検査したい値
 	 * @return
 	 */
-	BaseView of(String url);
+	public static <V extends BaseView> V of(Class<? extends BaseView> view, String url) {
+
+		for (BaseView baseView : view.getEnumConstants()) {
+			if (baseView.getUrl().equals(url)) {
+				return (V) baseView;
+			}
+		}
+		// 一致しない場合
+		return null;
+	}
 }

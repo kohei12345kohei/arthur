@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.common.dao.LoginUserDao;
@@ -48,7 +50,12 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	 * {@inheritDoc}
 	 */
 	@Override
-	public BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, LoginForm form, BindingResult result) {
+	public BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response
+			, @Validated @ModelAttribute("LoginForm") LoginForm form, BindingResult result) {
+
+		if (result.hasErrors()) {
+			return ArthurView.LOGIN;
+		}
 
 		LoginUser entity = loginUserDao.findLoginUserByLoginId(form.getLoginId());
 

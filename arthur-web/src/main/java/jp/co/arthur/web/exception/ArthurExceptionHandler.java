@@ -3,16 +3,16 @@ package jp.co.arthur.web.exception;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
 import jp.co.arthur.common.exception.BaseExceptionHandler;
+import jp.co.arthur.common.web.ArthurView;
 
 /**
  * アーサー例外ハンドラクラス
  *
  */
-public class ArthurExceptionHandler implements BaseExceptionHandler, HandlerExceptionResolver {
+public class ArthurExceptionHandler implements BaseExceptionHandler {
 
 	/**
 	 * {@inheritDoc}
@@ -23,7 +23,7 @@ public class ArthurExceptionHandler implements BaseExceptionHandler, HandlerExce
 										, Object handler
 										, Exception e) {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("error");
+		model.setViewName(ArthurView.ERROR.getUrl());
 		return model;
 	}
 
