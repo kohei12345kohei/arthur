@@ -11,24 +11,36 @@ import jp.co.arthur.common.entity.PurchaseInfo;
  */
 public class PurchaseInfoDaoImpl implements PurchaseInfoDao {
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void update(PurchaseInfo purchaseInfo) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void insert(PurchaseInfo entity) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<PurchaseInfo> selectByAccount(String account) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public PurchaseInfo selectByPurchaseInfoId(String purchaseInfoId) {
 		// TODO 自動生成されたメソッド・スタブ
