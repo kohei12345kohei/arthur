@@ -6,6 +6,6 @@ import jp.co.arthur.common.api.BaseApiRequest;
  * 購入商品登録リクエストクラス<br>
  *
  */
-public class PurchaseRegistRequest implements BaseApiRequest {
+public class PurchaseRegistRequest extends BaseApiRequest {
 
 }

@@ -12,8 +12,8 @@ public abstract class BaseArthurException extends Exception {
 
 	/** アーサーエラーコード */
 	private ArthurErrorCode errorCode;
-	/** 例外メッセージ */
-	private String execptionMessage;
+	/** 詳細 */
+	private String detail;
 
 	/**
 	 * デフォルトコンストラクタ<br>
@@ -33,11 +33,19 @@ public abstract class BaseArthurException extends Exception {
 	/**
 	 * 例外設定するコンストラクタ<br>
 	 * @param errorCode
-	 * @param execptionMessage
+	 * @param detail
 	 */
-	public BaseArthurException(ArthurErrorCode errorCode, String execptionMessage) {
+	public BaseArthurException(ArthurErrorCode errorCode, String detail) {
 		this.errorCode = errorCode;
-		this.execptionMessage = execptionMessage;
+		this.detail = detail;
+	}
+
+	/**
+	 * detailを返す<br>
+	 * @return detail
+	 */
+	public String getDetail() {
+		return detail;
 	}
 
 	/**
@@ -56,7 +64,7 @@ public abstract class BaseArthurException extends Exception {
 		StringJoiner joiner = new StringJoiner(StringUtil.SPACE);
 		joiner.add(this.errorCode.getErrorCode());
 		joiner.add(this.errorCode.getErrorMessage());
-		joiner.add(this.execptionMessage);
+		joiner.add(this.detail);
 		return joiner.toString();
 	}
 

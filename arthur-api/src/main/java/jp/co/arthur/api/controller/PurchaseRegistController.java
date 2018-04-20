@@ -1,7 +1,6 @@
 package jp.co.arthur.api.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +17,13 @@ import jp.co.arthur.common.exception.BaseArthurException;
 public class PurchaseRegistController implements BaseApiController<PurchaseRegistRequest, PurchaseRegistResponse> {
 
 	@Override
-	public PurchaseRegistResponse execute(HttpServletRequest req, HttpServletResponse resp) throws BaseArthurException {
+	public PurchaseRegistResponse execute(PurchaseRegistRequest request) throws BaseArthurException {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	@Override
+	public PurchaseRegistRequest toRequest(HttpServletRequest request) throws BaseArthurException {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}

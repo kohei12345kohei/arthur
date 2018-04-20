@@ -6,6 +6,6 @@ import jp.co.arthur.common.api.BaseApiResponse;
  * 購入商品登録レスポンスクラス<br>
  *
  */
-public class PurchaseRegistResponse implements BaseApiResponse {
+public class PurchaseRegistResponse extends BaseApiResponse {
 
 }

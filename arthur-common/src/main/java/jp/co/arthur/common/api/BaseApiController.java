@@ -25,8 +25,11 @@ public interface BaseApiController<Rq extends BaseApiRequest, Rs extends BaseApi
 	default Rs doGet(HttpServletRequest req, HttpServletResponse resp) {
 		Rs response = null;
 		try {
-			response = execute(req, resp);
+			Rq request = toRequest(req);
+			response = this.execute(request);
+			response.setResult(0);
 		} catch (BaseArthurException e) {
+			response = (Rs) new ErrorResponse(e);
 			e.printStackTrace();
 		}
 		return response;
@@ -45,11 +48,19 @@ public interface BaseApiController<Rq extends BaseApiRequest, Rs extends BaseApi
 
 	/**
 	 * 継承先で主処理を実装<br>
-	 * @param req
-	 * @param resp
-	 * @return
+	 * @param request
+	 * @return APIレスポンスクラス
 	 * @throws BaseArthurException
 	 */
-	Rs execute(HttpServletRequest req, HttpServletResponse resp) throws BaseArthurException;
+	Rs execute(Rq request) throws BaseArthurException;
+
+	/**
+	 * Requestクラスに変換する<br>
+	 * @param request HttpServletRequest
+	 * @return APIリクエストクラス
+	 * @throws BaseArthurException
+	 */
+	Rq toRequest(HttpServletRequest request) throws BaseArthurException;
+
 
 }
