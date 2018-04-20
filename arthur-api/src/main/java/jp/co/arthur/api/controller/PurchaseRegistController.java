@@ -24,8 +24,11 @@ public class PurchaseRegistController implements BaseApiController<PurchaseRegis
 
 	@Override
 	public PurchaseRegistRequest toRequest(HttpServletRequest request) throws BaseArthurException {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+
+		// APIリクエストクラス
+		PurchaseRegistRequest apiRequest = new PurchaseRegistRequest();
+
+		return apiRequest;
 	}
 
 }
