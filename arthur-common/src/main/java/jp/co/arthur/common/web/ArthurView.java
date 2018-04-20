@@ -32,17 +32,4 @@ public enum ArthurView implements BaseView {
 		return url;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public BaseView of(String url) {
-
-		for (ArthurView view : ArthurView.class.getEnumConstants()) {
-			if (view.url.equals(url)) {
-				return view;
-			}
-		}
-		return null;
-	}
 }
