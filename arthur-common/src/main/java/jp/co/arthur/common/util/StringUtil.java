@@ -22,6 +22,10 @@ public class StringUtil {
 	public static final String AND = "&";
 	/** = */
 	public static final String EQUAL = "=";
+	/** フラグ値：true */
+	public static final String FLG_TRUE = "1";
+	/** フラグ値：false */
+	public static final String FLG_FALSE = "0";
 
 	/**
 	 * プライベートコンストラクタ<br>
@@ -39,7 +43,7 @@ public class StringUtil {
 	}
 
 	/**
-	 * 指定された文字列をしていした数字分繰り返す<br>
+	 * 指定された文字列を指定した数字分繰り返す<br>
 	 * @param target
 	 * @param count
 	 * @return
@@ -70,6 +74,14 @@ public class StringUtil {
 		return Splitter.on(separator).splitToList(target);
 	}
 
+	/**
+	 * 指定した文字列からクエリの文字列をmapに変換する<br>
+	 * 例)<br>
+	 * target = name=hoge&from=huga の場合<br>
+	 * (name, hoge) (from, huga)のマップを返す<br>
+	 * @param target
+	 * @return
+	 */
 	public static Map<String, String> toQueryMap(String target) {
 		Splitter splitter = Splitter.on(AND);
 		// trimする
@@ -85,7 +97,7 @@ public class StringUtil {
 	 * @return
 	 */
 	public static boolean isTrue(String target) {
-		return "1".equals(target);
+		return FLG_TRUE.equals(target);
 	}
 
 	/**

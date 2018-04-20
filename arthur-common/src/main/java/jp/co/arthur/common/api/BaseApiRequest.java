@@ -1,9 +1,9 @@
 package jp.co.arthur.common.api;
 
 /**
- * API基底リクエストインターフェース<br>
+ * API基底リクエストクラス<br>
  *
  */
-public interface BaseApiRequest {
+public abstract class BaseApiRequest {
 
 }
