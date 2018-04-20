@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jp.co.arthur.api.request.PurchaseRegistRequest;
 import jp.co.arthur.api.response.PurchaseRegistResponse;
-import jp.co.arthur.common.api.BaseApiController;
+import jp.co.arthur.common.api.BaseApiRestController;
 import jp.co.arthur.common.exception.BaseArthurException;
 
 /**
@@ -14,7 +14,7 @@ import jp.co.arthur.common.exception.BaseArthurException;
  *
  */
 @RestController
-public class PurchaseRegistController implements BaseApiController<PurchaseRegistRequest, PurchaseRegistResponse> {
+public class PurchaseRegistController implements BaseApiRestController<PurchaseRegistRequest, PurchaseRegistResponse> {
 
 	@Override
 	public PurchaseRegistResponse execute(PurchaseRegistRequest request) throws BaseArthurException {
