@@ -10,6 +10,8 @@ public enum ArthurView implements BaseView {
 	LOGIN("login"),
 	/** メニュー画面 */
 	MENU("menu"),
+	/** エラー画面 */
+	ERROR("error"),
 	/** ログインユーザ作成入力画面 */
 	LOGIN_USER_CREATE_INPUT("loginUserCreate-input"),
 	/** ログインユーザ作成確認画面 */

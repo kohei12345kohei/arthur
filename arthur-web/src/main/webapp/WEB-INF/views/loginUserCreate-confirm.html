@@ -11,23 +11,44 @@
 </head>
 <body>
 <h3 class="title">ユーザ作成確認画面</h3>
-<form action="/arthur-web/loginUserCreate-complete">
-	<table class="table">
-		<tbody>
+<form action="/arthur-web/loginUserCreate-complete" method="post">
+	<div class="center">
+		<table class="table">
 			<tr>
-				<th>ログインID</th>
-				<td><input type="text" name="loginId" /></td>
+				<th>
+					<p>ログインID</p>
+				</th>
+				<td>
+					<input type="text" name="loginId" readonly="readonly" />
+				</td>
 			</tr>
 			<tr>
-				<th>パスワード</th>
-				<td><input type="password" name="password" /></td>
+				<th>
+					<p>パスワード</p>
+				</th>
+				<td>
+					<input type="password" name="password" readonly="readonly" />
+				</td>
 			</tr>
 			<tr>
-				<th>パスワード(確認用)</th>
-				<td><input type="password" name="confirmPassword" /></td>
+				<th>
+					<p>パスワード<br>(確認用)</p>
+				</th>
+				<td>
+					<input type="password" name="confirmPassword" readonly="readonly" />
+				</td>
 			</tr>
-		</tbody>
-	</table>
+		</table>
+		<div align="center">
+			<table>
+				<tr>
+					<td>
+						<input type="submit" value="作成" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </form>
 
 </body>
