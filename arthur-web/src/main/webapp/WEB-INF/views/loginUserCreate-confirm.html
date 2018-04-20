@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>ユーザ作成確認画面</title>
@@ -19,7 +19,7 @@
 					<p>ログインID</p>
 				</th>
 				<td>
-					<input type="text" name="loginId" readonly="readonly" />
+					<input type="text" name="loginId" th:field="${form.loginId}" readonly="readonly" />
 				</td>
 			</tr>
 			<tr>
@@ -27,7 +27,7 @@
 					<p>パスワード</p>
 				</th>
 				<td>
-					<input type="password" name="password" readonly="readonly" />
+					<input type="password" name="password" th:field="${form.password}" readonly="readonly" />
 				</td>
 			</tr>
 			<tr>
@@ -35,7 +35,7 @@
 					<p>パスワード<br>(確認用)</p>
 				</th>
 				<td>
-					<input type="password" name="confirmPassword" readonly="readonly" />
+					<input type="password" name="confirmPassword" th:field="${form.confirmPassword}" readonly="readonly" />
 				</td>
 			</tr>
 		</table>

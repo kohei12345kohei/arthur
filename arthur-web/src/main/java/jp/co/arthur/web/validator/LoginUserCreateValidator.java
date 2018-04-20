@@ -29,6 +29,7 @@ public class LoginUserCreateValidator implements Validator {
 
 		LoginUserCreateForm form = (LoginUserCreateForm) target;
 
+		// 必須チェックを行う
 		ValidationUtils.rejectIfEmpty(errors, "loginId", ArthurErrorCode.EMPTY.getErrorCode());
 		ValidationUtils.rejectIfEmpty(errors, "password", ArthurErrorCode.EMPTY.getErrorCode());
 

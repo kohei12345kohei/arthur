@@ -1,5 +1,8 @@
 package jp.co.arthur.web.form;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 import jp.co.arthur.common.web.BaseForm;
 
 /**
@@ -9,8 +12,11 @@ import jp.co.arthur.common.web.BaseForm;
 public class LoginForm implements BaseForm {
 
 	/** ログインID */
+	@NotEmpty(message = "ログインIDは必須です")
 	private String loginId;
 	/** パスワード */
+	@Size(min = 8, max = 16, message = "パスワードは{min}文字以上{max}文字以下です")
+	@NotEmpty(message = "パスワードは必須です")
 	private String password;
 
 	/**
@@ -41,6 +47,5 @@ public class LoginForm implements BaseForm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 
 }
