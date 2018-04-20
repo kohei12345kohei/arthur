@@ -3,42 +3,38 @@
 <head>
 <title>ログイン画面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="resources/image/favicon.png" >
+<link rel="shortcut icon" href="resources/image/favicon.png">
 <link rel="stylesheet" type="text/css" href="resources/css/loginLayout.css">
 <script type="text/javascript" src="resources/js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="resources/js/login.js"></script>
 <script type="text/javascript" src="resources/js/loginUserCreate.js"></script>
 </head>
 <body>
-	<div class="cont">
-		<div>
-			<p th:text="${errorMessage}" class="errorMessage"></p>
-		</div>
-		<div class="demo">
-			<div class="login">
-				<div class="login__check"></div>
-				<div class="login__form">
-				<form action="/arthur-web/login" name="loginForm" method="post">
-					<div class="login__row">
-						<svg class="login__icon name svg-icon" viewBox="0 0 20 20">
-						  <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-						</svg>
-						<input type="text" class="login__input name" name="loginId" placeholder="ログインID" />
-					</div>
-					<div class="login__row">
-						<svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
-							<path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
- 						</svg>
-						<input type="password" class="login__input pass" name="password" placeholder="パスワード" />
-					</div>
-					<!-- <button type="button" class="login__submit">Sign in</button> -->
-					<input type="button" id="login" class="login__submit" value="ログイン"><!-- ログイン</button> -->
-					<br>
-					<input type="button" class="login__submit" value="アカウント作成" onclick="create();" />
-				</form>
-				</div>
+
+	<div class="form-wrapper">
+		<h1>アーサーログイン画面</h1>
+		<form action="/arthur-web/login" name="loginForm" method="post">
+			<div class="form-item">
+				<label for="text"></label>
+				<input type="text" name="loginId" required="required" placeholder="ログインID" />
 			</div>
+			<div class="form-item">
+				<label for="password"></label>
+				<input type="password" name="password" required="required" placeholder="パスワード" />
+			</div>
+			<div class="button-panel">
+				<input type="submit" class="button" title="Sign In" value="Sign In"></input>
+			</div>
+			<div class="button-panel">
+				<input type="button" class="button" value="アカウント作成" onclick="create();" />
+			</div>
+		</form>
+		<div class="form-footer">
+			<p>
+				<a href="#">パスワードを忘れた場合</a>
+			</p>
 		</div>
 	</div>
+
 </body>
 </html>
