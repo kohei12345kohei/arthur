@@ -22,7 +22,7 @@ public enum ArthurErrorCode {
 	REQUIRE("require", "必須項目が入力されていません"),
 	/** 桁数超過エラー */
 	LENGTH_OVER("lengthOver", "桁数が超過しています"),
-	/** 桁数超過エラー */
+	/** 桁数不足エラー */
 	LENGTH_LACK("lengthLack", "桁数が不足しています"),
 	;
 
@@ -59,7 +59,7 @@ public enum ArthurErrorCode {
 	 */
 	public static ArthurErrorCode of(String errorCode) {
 
-		for (ArthurErrorCode arthurErrorCode : ArthurErrorCode.values()) {
+		for (ArthurErrorCode arthurErrorCode : ArthurErrorCode.class.getEnumConstants()) {
 			if (arthurErrorCode.errorCode.equals(errorCode)) {
 				return arthurErrorCode;
 			}
