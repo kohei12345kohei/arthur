@@ -1,22 +1,38 @@
 package jp.co.arthur.common.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * ログインユーザEntity<br>
  *
  */
-public class LoginUser {
+@Entity
+@Table(name = "LOGIN_USER")
+public class LoginUser implements Serializable {
 
+	/** シリアルバージョンUID */
+	private static final long serialVersionUID = 1L;
 	/** ログインID */
+	@Id
+	@Column(name = "LOGIN_ID", nullable = false, length = 16)
 	private String loginId;
 	/** パスワード */
+	@Column(name = "PASSWORD", nullable = false, length = 16)
 	private String password;
-	/** アカウント名 */
+	/** アカウント */
+	@Column(name = "ACCOUNT", nullable = false, length = 16)
 	private String account;
 	/** 登録日時 */
+	@Column(name = "REG_DATE", nullable = false)
 	private Date regDate;
 	/** 更新日時 */
+	@Column(name = "UPDATE_DATE", nullable = true)
 	private Date updateDate;
 
 	/**
