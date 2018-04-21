@@ -7,7 +7,7 @@
         <dependent-module archiveName="arthur-common-1.0.0-BUILD-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-common/arthur-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="arthur-business-1.0.0.BUILD-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-business/arthur-business">
+        <dependent-module archiveName="arthur-business-1.0.0-BUILD-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-business/arthur-business">
             <dependency-type>uses</dependency-type>
         </dependent-module>
 		<property name="java-output-path" value="target/classes"/>
