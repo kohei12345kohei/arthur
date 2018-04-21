@@ -13,7 +13,7 @@
 	<!-- ログインDao -->
 	<beans:bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl" />
 	<!-- 購入商品情報Dao -->
-	<beans:bean id="purchaseInfoDap" class="jp.co.arthur.common.dao.impl.PurchaseInfoDaoImpl" />
+	<beans:bean id="purchaseInfoDao" class="jp.co.arthur.common.dao.impl.PurchaseInfoDaoImpl" />
 
 
 
