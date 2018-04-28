@@ -81,7 +81,7 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	 */
 	@Insert
 	@Override
-	public void insertLoginUser(LoginUser entity) {
+	public void registLoginUser(LoginUser entity) {
 
 		try (FileInputStream in = new FileInputStream(RESOURCES);
 				Workbook workbook = WorkbookFactory.create(in);
