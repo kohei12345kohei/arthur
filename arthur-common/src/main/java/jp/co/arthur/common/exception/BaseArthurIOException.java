@@ -9,6 +9,10 @@ import java.util.StringJoiner;
  */
 public class BaseArthurIOException extends IOException {
 
+	/** シリアルバージョンUID */
+	private static final long serialVersionUID = 1L;
+
+
 	/** アーサーエラーコード */
 	private ArthurErrorCode errorCode;
 	/** 例外メッセージ */

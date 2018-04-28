@@ -10,6 +10,9 @@ import jp.co.arthur.common.util.StringUtil;
  */
 public abstract class BaseArthurException extends Exception {
 
+	/** シリアルバージョンUID */
+	private static final long serialVersionUID = 1L;
+
 	/** アーサーエラーコード */
 	private ArthurErrorCode errorCode;
 	/** 詳細 */
