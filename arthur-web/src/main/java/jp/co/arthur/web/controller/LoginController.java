@@ -76,6 +76,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	 * {@inheritDoc}
 	 * @deprecated
 	 */
+	@Deprecated
 	@Override
 	@InitBinder("LoginForm")
 	public void initBinder(WebDataBinder binder) {
