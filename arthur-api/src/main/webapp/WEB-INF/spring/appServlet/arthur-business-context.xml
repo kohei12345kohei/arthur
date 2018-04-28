@@ -10,6 +10,8 @@
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<annotation-driven />
+
 	<!-- 購入商品情報 登録サービス -->
 	<beans:bean id="purchaseCreateService" class="jp.co.arthur.business.purchase.impl.PurchaseCreateServiceImpl" />
 
