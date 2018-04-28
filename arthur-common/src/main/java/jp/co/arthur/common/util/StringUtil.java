@@ -26,6 +26,8 @@ public class StringUtil {
 	public static final String FLG_TRUE = "1";
 	/** フラグ値：false */
 	public static final String FLG_FALSE = "0";
+	/** 改行 */
+	public static final String NEW_LINE = "\r\n";
 
 	/**
 	 * プライベートコンストラクタ<br>
