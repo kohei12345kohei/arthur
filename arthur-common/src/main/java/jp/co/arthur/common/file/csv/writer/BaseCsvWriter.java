@@ -3,7 +3,9 @@ package jp.co.arthur.common.file.csv.writer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 import java.util.StringJoiner;
+import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,7 @@ import org.springframework.util.MimeTypeUtils;
 
 import jp.co.arthur.common.exception.ArthurErrorCode;
 import jp.co.arthur.common.exception.BaseArthurIOException;
+import jp.co.arthur.common.file.csv.annotation.CsvColumn;
 import jp.co.arthur.common.file.csv.model.BaseCsvModel;
 import jp.co.arthur.common.other.Charset;
 import jp.co.arthur.common.util.StringUtil;
@@ -28,10 +31,12 @@ public abstract class BaseCsvWriter<T extends BaseCsvModel> {
 
 	/**
 	 * コンストラクタ<br>
-	 * @param enclosureChar
+	 * @param enclosureChar 囲い文字
+	 * @param modelList 出力モデルクラスリスト
 	 */
-	public BaseCsvWriter(String enclosureChar) {
+	public BaseCsvWriter(String enclosureChar, List<T> modelList) {
 		this.enclosureChar = enclosureChar;
+		this.modelList = modelList;
 	}
 
 	/**
@@ -99,6 +104,22 @@ public abstract class BaseCsvWriter<T extends BaseCsvModel> {
 	 */
 	protected void write(StringJoiner joiner, String data) {
 		joiner.add(enclosureChar + data + enclosureChar);
+	}
+
+	/**
+	 * 指定したクラス型のフィールドについた@CsvColumnのorder順にCsvOrderMapを返す<br>
+	 * @param clazz
+	 * @return
+	 */
+	protected Map<Integer, CsvColumn> getCsvColumnOrder(Class<T> clazz) {
+
+		Map<Integer, CsvColumn> orderMap = new TreeMap<Integer, CsvColumn>();
+		List.of(clazz.getDeclaredFields()).stream().forEach(field -> {
+			CsvColumn column = field.getAnnotation(CsvColumn.class);
+			orderMap.put(column.order(), column);
+		});
+
+		return orderMap;
 	}
 
 	/**
