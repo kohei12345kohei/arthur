@@ -12,8 +12,7 @@
 
 	<annotation-driven />
 
-	<resources mapping="/resources/**" location="/resources/" />
-
-	<context:component-scan base-package="jp.co.arthur" />
+	<!-- ログインDao -->
+	<beans:bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl" />
 
 </beans:beans>

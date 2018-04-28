@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.arthur.common.dao.LoginUserDao;
+import jp.co.arthur.business.loginUser.LoginUserSearchService;
 import jp.co.arthur.common.entity.LoginUser;
 import jp.co.arthur.common.exception.ArthurErrorCode;
 import jp.co.arthur.common.web.ArthurView;
@@ -34,9 +34,9 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	/** ログインサービス */
 	@Autowired
 	private LoginService loginService;
-	/** ログインDao */
+	/** ログインユーザ情報検索サービス */
 	@Autowired
-	private LoginUserDao loginUserDao;
+	private LoginUserSearchService loginUserSearchService;
 
 	/**
 	 * {@inheritDoc}
@@ -57,7 +57,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 			return ArthurView.LOGIN;
 		}
 
-		LoginUser entity = loginUserDao.findLoginUserByLoginId(form.getLoginId());
+		LoginUser entity = loginUserSearchService.findLoginUserByLoginId(form.getLoginId());
 
 		if (!loginService.isAuth(entity, form.getPassword())) {
 			model.addAttribute("errorMessage", ArthurErrorCode.LOGIN_FAILED.getErrorMessage());

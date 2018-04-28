@@ -18,7 +18,7 @@ import jp.co.arthur.common.exception.BaseArthurException;
 @RestController
 public class PurchaseRegistController implements BaseApiRestController<PurchaseRegistRequest, PurchaseRegistResponse> {
 
-
+	/** 購入商品情報登録サービス */
 	@Autowired
 	private PurchaseRegistService purchaseRegistService;
 
