@@ -32,6 +32,7 @@ public class LoginUserCreateConfirmController implements BaseSimplePostControlle
 			@Validated LoginUserCreateForm form, BindingResult result) {
 
 		if (result.hasErrors()) {
+			// validationエラーが存在する場合
 			return ArthurView.LOGIN_USER_CREATE_INPUT;
 		}
 

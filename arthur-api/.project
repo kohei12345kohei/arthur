@@ -3,8 +3,8 @@
 	<name>arthur-api</name>
 	<comment></comment>
 	<projects>
-		<project>arthur-common</project>
 		<project>arthur-business</project>
+		<project>arthur-common</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

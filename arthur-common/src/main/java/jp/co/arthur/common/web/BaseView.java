@@ -16,8 +16,8 @@ public interface BaseView {
 	/**
 	 * 指定したEnumクラスの指定した値と一致するEnumを返す<br>
 	 * 一致するenumがない場合nullを返す<br>
-	 * @param viewClass BaseViewを継承したViewのEnum
-	 * @param value 検査したい値
+	 * @param view BaseViewを継承したViewのEnum
+	 * @param url 検査したい値
 	 * @return
 	 */
 	public static <V extends BaseView> V of(Class<? extends BaseView> view, String url) {

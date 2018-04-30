@@ -10,7 +10,11 @@
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<beans:bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl" />
-	<beans:bean id="purchaseInfoDao" class="jp.co.arthur.common.dao.impl.PurchaseInfoDaoImpl" />
+	<annotation-driven />
+
+	<!-- ログインユーザ情報 検索サービス -->
+	<beans:bean id="loginUserSearchService" class="jp.co.arthur.business.loginUser.impl.LoginUserSearchServiceImpl" />
+	<!-- ログインユーザ情報 作成サービス -->
+	<beans:bean id="loginUserCreateService" class="jp.co.arthur.business.loginUser.impl.LoginUserCreateServiceImpl" />
 
 </beans:beans>

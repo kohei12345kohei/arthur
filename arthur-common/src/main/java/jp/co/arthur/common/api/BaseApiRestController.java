@@ -30,7 +30,7 @@ public interface BaseApiRestController<Rq extends BaseApiRequest, Rs extends Bas
 			response.setResult(0);
 		} catch (BaseArthurException e) {
 			response = (Rs) new ErrorResponse(e);
-			e.printStackTrace();
+			System.out.println(e.toString());
 		}
 		return response;
 	}

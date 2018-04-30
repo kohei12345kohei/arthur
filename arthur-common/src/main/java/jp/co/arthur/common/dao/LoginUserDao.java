@@ -22,6 +22,6 @@ public interface LoginUserDao {
 	 * 作成
 	 * @param entity
 	 */
-	void insertLoginUser(LoginUser entity);
+	void registLoginUser(LoginUser entity);
 
 }

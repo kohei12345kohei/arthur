@@ -17,25 +17,25 @@ public interface PurchaseInfoDao {
 	 * 更新
 	 * @param purchaseInfo
 	 */
-	void update(PurchaseInfo purchaseInfo);
+	void updatePurchaseInfo(PurchaseInfo purchaseInfo);
 
 	/**
 	 * 作成
 	 * @param entity
 	 */
-	void insert(PurchaseInfo entity);
+	void registPurchaseInfo(PurchaseInfo entity);
 
 	/**
 	 * 指定されたアカウントに紐づく購入商品情報を返す
 	 * @param account
 	 * @return
 	 */
-	List<PurchaseInfo> selectByAccount(String account);
+	List<PurchaseInfo> findByAccount(String account);
 
 	/**
 	 * 指定された購入商品IDに紐づく購入商品情報を返す
 	 * @param purchaseInfoId
 	 * @return
 	 */
-	PurchaseInfo selectByPurchaseInfoId(String purchaseInfoId);
+	PurchaseInfo findByPurchaseInfoId(String purchaseInfoId);
 }
