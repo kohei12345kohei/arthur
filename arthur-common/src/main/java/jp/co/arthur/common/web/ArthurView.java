@@ -19,7 +19,7 @@ public enum ArthurView implements BaseView {
 	/** ログインユーザ作成完了画面 */
 	LOGIN_USER_CREATE_COMPLETE("loginUserCreate-complete");
 
-	/** url */
+	/** URL */
 	private String url;
 
 	private ArthurView(String url) {

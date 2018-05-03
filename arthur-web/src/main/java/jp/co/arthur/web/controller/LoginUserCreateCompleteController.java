@@ -53,7 +53,7 @@ public class LoginUserCreateCompleteController implements BaseSimplePostControll
 		}
 
 		LoginUser entity = new LoginUser();
-		loginUserCreateService.registLoginUser(entity);
+		loginUserCreateService.create(entity);
 
 		return ArthurView.LOGIN_USER_CREATE_COMPLETE;
 	}

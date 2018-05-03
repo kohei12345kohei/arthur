@@ -19,6 +19,7 @@ public class PurchaseInfo implements Serializable {
 
 	/** シリアルバージョンUID */
 	private static final long serialVersionUID = 1L;
+	/** 購入商品情報ID */
 	@Id
 	@Column(name = "PURCHASE_INFO_ID", nullable = false, length = 16)
 	private String purchaseInfoId;
