@@ -93,8 +93,8 @@ public class LoginUserDaoImpl implements LoginUserDao {
 			newRow.createCell(0).setCellValue(entity.getLoginId());
 			newRow.createCell(1).setCellValue(entity.getPassword());
 			newRow.createCell(2).setCellValue(entity.getAccount());
-			newRow.createCell(3).setCellValue(DateUtil.toString(entity.getRegDate(), DateFormat.YYYYMMDD_HHMMSS));
-			newRow.createCell(4).setCellValue(DateUtil.toString(entity.getUpdateDate(), DateFormat.YYYYMMDD_HHMMSS));
+			newRow.createCell(3).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormat.YYYYMMDD_HHMMSS));
+			newRow.createCell(4).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormat.YYYYMMDD_HHMMSS));
 
 			fos.flush();
 			workbook.write(fos);

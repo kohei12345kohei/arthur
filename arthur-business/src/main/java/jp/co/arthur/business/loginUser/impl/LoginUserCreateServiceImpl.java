@@ -14,16 +14,16 @@ import jp.co.arthur.common.entity.LoginUser;
 @Service
 public class LoginUserCreateServiceImpl implements LoginUserCreateService {
 
-	/** ログインDao */
+	/** ログインユーザ情報Dao */
 	@Autowired
-	private LoginUserDao registLoginUser;
+	private LoginUserDao loginUserDao;
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void registLoginUser(LoginUser entity) {
-		registLoginUser.registLoginUser(entity);
+	public void create(LoginUser entity) {
+		loginUserDao.registLoginUser(entity);
 	}
 
 }

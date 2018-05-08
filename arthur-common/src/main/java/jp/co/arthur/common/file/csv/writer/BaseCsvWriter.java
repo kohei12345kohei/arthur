@@ -19,7 +19,7 @@ import jp.co.arthur.common.other.Charset;
 import jp.co.arthur.common.util.StringUtil;
 
 /**
- * CSV書き込み基底クラス<br>
+ * CSV書込 基底クラス<br>
  * @param <T>CSV出力モデルリスト
  */
 public abstract class BaseCsvWriter<T extends BaseCsvModel> {

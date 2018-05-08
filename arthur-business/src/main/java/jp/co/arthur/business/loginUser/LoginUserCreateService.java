@@ -8,6 +8,6 @@ public interface LoginUserCreateService {
 	 * 作成
 	 * @param entity
 	 */
-	void registLoginUser(LoginUser entity);
+	void create(LoginUser entity);
 
 }

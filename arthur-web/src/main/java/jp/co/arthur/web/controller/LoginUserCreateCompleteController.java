@@ -3,6 +3,7 @@ package jp.co.arthur.web.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,7 +54,8 @@ public class LoginUserCreateCompleteController implements BaseSimplePostControll
 		}
 
 		LoginUser entity = new LoginUser();
-		loginUserCreateService.registLoginUser(entity);
+		BeanUtils.copyProperties(form, entity);
+		loginUserCreateService.create(entity);
 
 		return ArthurView.LOGIN_USER_CREATE_COMPLETE;
 	}

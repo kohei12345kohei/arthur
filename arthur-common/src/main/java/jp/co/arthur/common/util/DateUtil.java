@@ -17,6 +17,14 @@ public class DateUtil {
 	private DateUtil() {
 	}
 
+	/**
+	 * システム日付を返す<br>
+	 * @return
+	 */
+	public static Date getSysDate() {
+		return new Date();
+	}
+
 	public static String toString(Date targetDate, DateFormat format) {
 
 		if (Objects.isNull(format) || StringUtil.isEmpty(format.getValue())) {
