@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 /**
  * POST通信の単一画面基底コントローラインターフェース<br>
  *
- * @param <F>フォームクラス
+ * @param <F> フォームクラス
  */
 public interface BaseSimplePostController<F extends BaseForm> {
 

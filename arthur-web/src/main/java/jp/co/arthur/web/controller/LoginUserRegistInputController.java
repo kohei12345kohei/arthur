@@ -15,15 +15,15 @@ import jp.co.arthur.common.web.BaseSimpleGetController;
  *
  */
 @Controller
-@RequestMapping(value = "/loginUserCreate-input")
-public class LoginUserCreateInputController implements BaseSimpleGetController {
+@RequestMapping(value = "/loginUserRegist-input")
+public class LoginUserRegistInputController implements BaseSimpleGetController {
 
 	/**
 	 * ログインユーザ作成入力画面<br>
 	 */
 	@Override
 	public ArthurView getView(Model model, HttpServletRequest request, HttpServletResponse response) {
-		return ArthurView.LOGIN_USER_CREATE_INPUT;
+		return ArthurView.LOGIN_USER_REGIST_INPUT;
 	}
 
 }

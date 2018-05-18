@@ -13,11 +13,20 @@ public enum ArthurView implements BaseView {
 	/** エラー画面 */
 	ERROR("error"),
 	/** ログインユーザ作成入力画面 */
-	LOGIN_USER_CREATE_INPUT("loginUserCreate-input"),
+	LOGIN_USER_REGIST_INPUT("loginUserRegist-input"),
 	/** ログインユーザ作成確認画面 */
-	LOGIN_USER_CREATE_CONFIRM("loginUserCreate-confirm"),
+	LOGIN_USER_REGIST_CONFIRM("loginUserRegist-confirm"),
 	/** ログインユーザ作成完了画面 */
-	LOGIN_USER_CREATE_COMPLETE("loginUserCreate-complete");
+	LOGIN_USER_REGIST_COMPLETE("loginUserRegist-complete"),
+	/** ログインユーザ設定詳細画面 */
+	LOGIN_USER_SETTING_DETAIL("loginUserSetting-detail"),
+	/** ログインユーザ設定入力画面 */
+	LOGIN_USER_SETTING_INPUT("loginUserSetting-input"),
+	/** ログインユーザ設定確認画面 */
+	LOGIN_USER_SETTING_CONFIRM("loginUserSetting-confirm"),
+	/** ログインユーザ設定完了画面 */
+	LOGIN_USER_SETTING_COMPLETE("loginUserSetting-complete"),
+	;
 
 	/** URL */
 	private String url;

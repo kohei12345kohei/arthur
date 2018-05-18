@@ -13,10 +13,10 @@
 	<annotation-driven />
 
 	<!-- 購入商品情報 登録サービス -->
-	<beans:bean id="purchaseCreateService" class="jp.co.arthur.business.purchase.impl.PurchaseCreateServiceImpl" />
+	<beans:bean id="purchaseCreateService" class="jp.co.arthur.business.db.create.impl.PurchaseCreateServiceImpl" />
 
 	<!-- ログインユーザ情報 検索サービス -->
-	<beans:bean id="loginUserSearchService" class="jp.co.arthur.business.loginUser.impl.LoginUserSearchServiceImpl" />
+	<beans:bean id="loginUserSearchService" class="jp.co.arthur.business.db.select.impl.LoginUserSearchServiceImpl" />
 
 
 </beans:beans>

@@ -10,7 +10,7 @@
 	<artifactId>arthur-common</artifactId>
 	<name>arthur-common</name>
 	<packaging>jar</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<version>1.0</version>
 
 	<properties>
 		<java-version>9</java-version>

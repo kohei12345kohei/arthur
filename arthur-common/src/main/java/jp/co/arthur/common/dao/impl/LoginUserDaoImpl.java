@@ -13,6 +13,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.springframework.stereotype.Repository;
 
 import jp.co.arthur.common.dao.LoginUserDao;
 import jp.co.arthur.common.entity.LoginUser;
@@ -26,6 +27,7 @@ import jp.co.arthur.common.util.DateUtil;
  * ログインユーザDao実装クラス<br>
  *
  */
+@Repository
 public class LoginUserDaoImpl implements LoginUserDao {
 
 	/** 保存先ファイルパス */
@@ -36,7 +38,7 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	 */
 	@Select
 	@Override
-	public LoginUser findLoginUserByLoginId(String loginId) {
+	public LoginUser findByLoginId(String loginId) {
 
 		LoginUser loginUser = new LoginUser();
 
@@ -59,8 +61,8 @@ public class LoginUserDaoImpl implements LoginUserDao {
 					loginUser.setLoginId(row.getCell(0).getStringCellValue());
 					loginUser.setPassword(row.getCell(1).getStringCellValue());
 					loginUser.setAccount(row.getCell(2).getStringCellValue());
-					loginUser.setRegDate(DateUtil.formatDate(row.getCell(3).getStringCellValue()));
-					loginUser.setUpdateDate(DateUtil.formatDate(row.getCell(4).getStringCellValue()));
+					loginUser.setRegDate(DateUtil.toDate(row.getCell(3).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
+					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(4).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
 
 				}
 			}
@@ -81,7 +83,7 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	 */
 	@Insert
 	@Override
-	public void registLoginUser(LoginUser entity) {
+	public void create(LoginUser entity) {
 
 		try (FileInputStream in = new FileInputStream(RESOURCES);
 				Workbook workbook = WorkbookFactory.create(in);
@@ -110,6 +112,52 @@ public class LoginUserDaoImpl implements LoginUserDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Select
+	@Override
+	public LoginUser findByAccount(String account) {
+
+
+		LoginUser loginUser = new LoginUser();
+
+		try (Workbook workbook = WorkbookFactory.create(new File(RESOURCES))) {
+
+			Sheet sheet = workbook.getSheet(TABLE_NAME);
+			Iterator<Row> iteRow = sheet.rowIterator();
+			while (iteRow.hasNext()) {
+
+				// 1行取得
+				Row row = iteRow.next();
+
+				// ヘッダーの場合、次のレコードに進む
+				if (row.getRowNum() == 0) {
+					continue;
+				}
+
+				if (account.equals(row.getCell(2).getStringCellValue())) {
+
+					loginUser.setLoginId(row.getCell(0).getStringCellValue());
+					loginUser.setPassword(row.getCell(1).getStringCellValue());
+					loginUser.setAccount(row.getCell(2).getStringCellValue());
+					loginUser.setRegDate(DateUtil.toDate(row.getCell(3).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
+					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(4).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
+
+				}
+			}
+
+		} catch (EncryptedDocumentException e) {
+			e.printStackTrace();
+		} catch (InvalidFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return loginUser;
 	}
 
 }

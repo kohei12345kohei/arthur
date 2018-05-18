@@ -13,12 +13,12 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.arthur.business.loginUser.LoginUserCreateService;
+import jp.co.arthur.business.db.create.LoginUserCreateService;
 import jp.co.arthur.common.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimplePostController;
 import jp.co.arthur.common.web.BaseView;
-import jp.co.arthur.web.form.LoginUserCreateForm;
+import jp.co.arthur.web.form.LoginUserRegistForm;
 import jp.co.arthur.web.validator.LoginUserCreateValidator;
 
 /**
@@ -26,8 +26,8 @@ import jp.co.arthur.web.validator.LoginUserCreateValidator;
  *
  */
 @Controller
-@RequestMapping(value = "/loginUserCreate-complete")
-public class LoginUserCreateCompleteController implements BaseSimplePostController<LoginUserCreateForm> {
+@RequestMapping(value = "/loginUserRegist-complete")
+public class LoginUserRegistCompleteController implements BaseSimplePostController<LoginUserRegistForm> {
 
 	/** ログインユーザ情報 作成サービスクラス */
 	@Autowired
@@ -47,17 +47,19 @@ public class LoginUserCreateCompleteController implements BaseSimplePostControll
 	 */
 	@Override
 	public BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response,
-			@Validated LoginUserCreateForm form, BindingResult result) {
+			@Validated LoginUserRegistForm form, BindingResult result) {
 
 		if (result.hasErrors()) {
-			return ArthurView.LOGIN_USER_CREATE_INPUT;
+			return ArthurView.LOGIN_USER_REGIST_INPUT;
 		}
 
 		LoginUser entity = new LoginUser();
 		BeanUtils.copyProperties(form, entity);
-		loginUserCreateService.create(entity);
+		loginUserCreateService.regist(entity);
 
-		return ArthurView.LOGIN_USER_CREATE_COMPLETE;
+		model.addAttribute("form", form);
+
+		return ArthurView.LOGIN_USER_REGIST_COMPLETE;
 	}
 
 }

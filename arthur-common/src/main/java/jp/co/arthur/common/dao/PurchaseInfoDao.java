@@ -17,13 +17,13 @@ public interface PurchaseInfoDao {
 	 * 更新
 	 * @param purchaseInfo
 	 */
-	void updatePurchaseInfo(PurchaseInfo purchaseInfo);
+	void update(PurchaseInfo purchaseInfo);
 
 	/**
 	 * 作成
 	 * @param entity
 	 */
-	void registPurchaseInfo(PurchaseInfo entity);
+	void create(PurchaseInfo entity);
 
 	/**
 	 * 指定されたアカウントに紐づく購入商品情報を返す

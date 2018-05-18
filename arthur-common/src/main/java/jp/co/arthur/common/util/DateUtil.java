@@ -25,6 +25,11 @@ public class DateUtil {
 		return new Date();
 	}
 
+	/**
+	 * @param targetDate
+	 * @param format
+	 * @return
+	 */
 	public static String toString(Date targetDate, DateFormat format) {
 
 		if (Objects.isNull(format) || StringUtil.isEmpty(format.getValue())) {
@@ -38,15 +43,14 @@ public class DateUtil {
 	 * 文字列型の日付をDate型の日付に変換する<br>
 	 * @param target
 	 * @return
-	 * @throws ParseException
 	 */
-	public static Date formatDate(String target) {
+	public static Date toDate(String target, DateFormat dateFormat) {
 
-		SimpleDateFormat sdf = new SimpleDateFormat(DateFormat.YYYYMMDD_HHMMSS.getValue());
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat.getValue());
 		Date resultDate = null;
 		try {
 			resultDate = sdf.parse(target);
-		} catch(ParseException e) {
+		} catch (ParseException e) {
 			System.out.println("変換に失敗しました");
 		}
 		return resultDate;

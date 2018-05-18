@@ -9,7 +9,7 @@ import jp.co.arthur.common.web.BaseForm;
  * ログインユーザ作成フォームクラス<br>
  *
  */
-public class LoginUserCreateForm implements BaseForm {
+public class LoginUserRegistForm implements BaseForm {
 
 	/** ログインID */
 	@NotEmpty(message = "ログインIDは必須です")
