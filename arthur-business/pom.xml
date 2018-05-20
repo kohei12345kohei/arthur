@@ -76,6 +76,19 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
+		<!-- guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>25.0-jre</version>
+		</dependency>
+		<!-- googleAPI -->
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-genomics</artifactId>
+			<version>v1-rev552-1.23.0</version>
+		</dependency>
+
 		<!-- json lib -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -119,7 +132,7 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
+			<version>1.2.17</version>
 			<exclusions>
 				<exclusion>
 					<groupId>javax.mail</groupId>
