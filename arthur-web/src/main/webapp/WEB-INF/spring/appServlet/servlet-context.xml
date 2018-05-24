@@ -28,7 +28,7 @@
 		<!-- ここで設定していないとhtmlを描画時に日本語が文字化けする -->
 		<beans:property name="characterEncoding" value="UTF-8" />
 	</beans:bean>
-
+	<beans:bean id="exceptionHandler" class="jp.co.arthur.web.exception.ArthurExceptionHandler" />
 	<context:component-scan base-package="jp.co.arthur.web.controller" />
 	<context:component-scan base-package="jp.co.arthur.web.service.impl" />
 	<context:component-scan base-package="jp.co.arthur.web.config" />

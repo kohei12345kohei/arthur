@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>ユーザ作成完了画面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="resources/image/favicon.png" >
 <link rel="stylesheet" type="text/css" href="resources/css/common/table.css">
+<link rel="stylesheet" type="text/css" href="resources/css/common/form.css">
 <link rel="stylesheet" type="text/css" href="resources/css/common/baseLayout.css">
 <script type="text/javascript" src="resources/js/jquery-3.3.1.js"></script>
 </head>
 <body>
 <h3 class="title">ユーザ作成完了画面</h3>
-	<table class="table">
-		<tbody>
-			<tr>
-				<th class="arrow_box">ログインID</th>
-				<td><input type="text" name="loginId" /></td>
-			</tr>
-			<tr>
-				<th class="arrow_box">パスワード</th>
-				<td><input type="password" name="password" /></td>
-			</tr>
-			<tr>
-				<th class="arrow_box">パスワード(確認用)</th>
-				<td><input type="password" name="confirmPassword" /></td>
-			</tr>
-		</tbody>
-	</table>
+	<div align="center">
+		<p>完了しました。</p>
+		<br><br><br>
+		<form action="/arthur-web/login" method="get">
+			<input type="submit" value="ログイン画面へ" />
+		</form>
+	</div>
 
 </body>
 </html>

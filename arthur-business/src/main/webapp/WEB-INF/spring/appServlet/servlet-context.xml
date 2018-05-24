@@ -12,7 +12,11 @@
 
 	<annotation-driven />
 
-	<!-- ログインDao -->
+	<!-- ログインユーザDao -->
 	<beans:bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl" />
+	<!-- 購入商品情報Dao -->
+	<beans:bean id="purchaseInfoDao" class="jp.co.arthur.common.dao.impl.PurchaseInfoDaoImpl" />
+	<!-- ユーザ情報Dao -->
+	<beans:bean id="userInfoDao" class="jp.co.arthur.common.dao.impl.UserInfoDaoImpl" />
 
 </beans:beans>

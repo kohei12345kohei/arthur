@@ -2,6 +2,8 @@ package jp.co.arthur.common.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import jp.co.arthur.common.dao.PurchaseInfoDao;
 import jp.co.arthur.common.entity.PurchaseInfo;
 import jp.co.arthur.common.other.Insert;
@@ -12,6 +14,7 @@ import jp.co.arthur.common.other.Update;
  * 購入商品情報Dao実装クラス
  *
  */
+@Repository
 public class PurchaseInfoDaoImpl implements PurchaseInfoDao {
 
 	/**
@@ -19,7 +22,7 @@ public class PurchaseInfoDaoImpl implements PurchaseInfoDao {
 	 */
 	@Update
 	@Override
-	public void updatePurchaseInfo(PurchaseInfo purchaseInfo) {
+	public void update(PurchaseInfo purchaseInfo) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
@@ -29,7 +32,7 @@ public class PurchaseInfoDaoImpl implements PurchaseInfoDao {
 	 */
 	@Insert
 	@Override
-	public void registPurchaseInfo(PurchaseInfo entity) {
+	public void create(PurchaseInfo entity) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}

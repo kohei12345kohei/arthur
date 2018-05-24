@@ -13,8 +13,8 @@
 	<annotation-driven />
 
 	<!-- ログインユーザ情報 検索サービス -->
-	<beans:bean id="loginUserSearchService" class="jp.co.arthur.business.loginUser.impl.LoginUserSearchServiceImpl" />
+	<beans:bean id="loginUserSearchService" class="jp.co.arthur.business.db.select.impl.LoginUserSearchServiceImpl" />
 	<!-- ログインユーザ情報 作成サービス -->
-	<beans:bean id="loginUserCreateService" class="jp.co.arthur.business.loginUser.impl.LoginUserCreateServiceImpl" />
+	<beans:bean id="loginUserCreateService" class="jp.co.arthur.business.db.create.impl.LoginUserCreateServiceImpl" />
 
 </beans:beans>

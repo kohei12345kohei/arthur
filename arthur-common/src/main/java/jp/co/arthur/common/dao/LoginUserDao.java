@@ -16,12 +16,19 @@ public interface LoginUserDao {
 	 * @param loginId
 	 * @return
 	 */
-	LoginUser findLoginUserByLoginId(String loginId);
+	LoginUser findByLoginId(String loginId);
+
+	/**
+	 * アカウントからログインユーザを返す<br>
+	 * @param account
+	 * @return
+	 */
+	LoginUser findByAccount(String account);
 
 	/**
 	 * 作成
 	 * @param entity
 	 */
-	void registLoginUser(LoginUser entity);
+	void create(LoginUser entity);
 
 }

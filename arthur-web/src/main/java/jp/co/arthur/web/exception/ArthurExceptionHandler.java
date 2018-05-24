@@ -22,6 +22,7 @@ public class ArthurExceptionHandler implements BaseExceptionHandler {
 										, HttpServletResponse response
 										, Object handler
 										, Exception e) {
+
 		ModelAndView model = new ModelAndView();
 		model.setViewName(ArthurView.ERROR.getUrl());
 		return model;

@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 import jp.co.arthur.api.request.PurchaseRegistRequest;
 import jp.co.arthur.api.response.PurchaseRegistResponse;
 import jp.co.arthur.api.service.PurchaseRegistService;
+import jp.co.arthur.business.db.create.PurchaseCreateService;
 import jp.co.arthur.common.entity.PurchaseInfo;
-import jp.co.arthur.common.exception.PurchaseException;
-import jp.co.arthur.business.purchase.PurchaseCreateService;;
+import jp.co.arthur.common.exception.PurchaseException;;
 
 /**
  * 購入商品登録サービス<br>
@@ -17,6 +17,7 @@ import jp.co.arthur.business.purchase.PurchaseCreateService;;
 @Service
 public class PurchaseRegistServiceImpl implements PurchaseRegistService {
 
+	/** 購入商品情報作成サービス */
 	@Autowired
 	private PurchaseCreateService purchaseCreateService;
 
@@ -26,9 +27,16 @@ public class PurchaseRegistServiceImpl implements PurchaseRegistService {
 	@Override
 	public PurchaseRegistResponse execute(PurchaseRegistRequest request) throws PurchaseException {
 
-		PurchaseInfo entity = new PurchaseInfo();
-		purchaseCreateService.registPurchaseInfo(entity);
-		return null;
+		// Entityに変換
+		PurchaseInfo entity = toEntity(request);
+
+		// DBに登録
+		purchaseCreateService.regist(entity);
+
+		// responseに変換
+		PurchaseRegistResponse response = toResponse(entity);
+
+		return response;
 	}
 
 	/**
@@ -38,6 +46,25 @@ public class PurchaseRegistServiceImpl implements PurchaseRegistService {
 	public void checkRequest(PurchaseRegistRequest request) throws PurchaseException {
 		// TODO 自動生成されたメソッド・スタブ
 
+	}
+
+	/**
+	 * 購入商品情報Entityに変換する<br>
+	 * @param request
+	 * @return
+	 */
+	private PurchaseInfo toEntity(PurchaseRegistRequest request) {
+		PurchaseInfo entity = new PurchaseInfo();
+		return entity;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public PurchaseRegistResponse toResponse(PurchaseInfo entity) {
+		PurchaseRegistResponse response = new PurchaseRegistResponse();
+		return response;
 	}
 
 

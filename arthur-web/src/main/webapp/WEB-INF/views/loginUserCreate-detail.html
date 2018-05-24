@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>ユーザ作成確認画面</title>
+<title>ユーザ情報詳細画面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="resources/image/favicon.png" >
 <link rel="stylesheet" type="text/css" href="resources/css/common/table.css">
@@ -10,8 +10,7 @@
 <script type="text/javascript" src="resources/js/jquery-3.3.1.js"></script>
 </head>
 <body>
-<h3 class="title">ユーザ作成確認画面</h3>
-<form action="/arthur-web/loginUserCreate-complete" method="post">
+<h3 class="title">ユーザ情報詳細画面</h3>
 	<div class="center">
 		<table class="table">
 			<tr>
@@ -19,7 +18,7 @@
 					<p>ログインID</p>
 				</th>
 				<td>
-					<input type="text" name="loginId" th:field="${form.loginId}" readonly="readonly" />
+					<input type="text" name="loginId" />
 				</td>
 			</tr>
 			<tr>
@@ -27,29 +26,21 @@
 					<p>パスワード</p>
 				</th>
 				<td>
-					<input type="text" name="password" th:field="${form.password}" readonly="readonly" />
+					<input type="password" name="password" />
 				</td>
 			</tr>
-			<tr>
-				<th>
-					<p>パスワード<br>(確認用)</p>
-				</th>
-				<td>
-					<input type="text" name="confirmPassword" th:field="${form.confirmPassword}" readonly="readonly" />
-				</td>
-			</tr>
+
+
 		</table>
 		<div align="center">
 			<table>
 				<tr>
 					<td>
-						<input type="submit" value="作成" />
+						<input type="submit" value="確認" />
 					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
-</form>
-
 </body>
 </html>

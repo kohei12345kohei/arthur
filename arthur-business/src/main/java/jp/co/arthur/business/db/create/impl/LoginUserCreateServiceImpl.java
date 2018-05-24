@@ -1,9 +1,9 @@
-package jp.co.arthur.business.loginUser.impl;
+package jp.co.arthur.business.db.create.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jp.co.arthur.business.loginUser.LoginUserCreateService;
+import jp.co.arthur.business.db.create.LoginUserCreateService;
 import jp.co.arthur.common.dao.LoginUserDao;
 import jp.co.arthur.common.entity.LoginUser;
 
@@ -22,8 +22,8 @@ public class LoginUserCreateServiceImpl implements LoginUserCreateService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void create(LoginUser entity) {
-		loginUserDao.registLoginUser(entity);
+	public void regist(LoginUser entity) {
+		loginUserDao.create(entity);
 	}
 
 }

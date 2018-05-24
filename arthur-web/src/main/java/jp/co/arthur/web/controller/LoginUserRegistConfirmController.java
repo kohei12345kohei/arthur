@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimplePostController;
-import jp.co.arthur.web.form.LoginUserCreateForm;
+import jp.co.arthur.web.form.LoginUserRegistForm;
 import jp.co.arthur.web.validator.LoginUserCreateValidator;
 
 /**
@@ -21,25 +21,25 @@ import jp.co.arthur.web.validator.LoginUserCreateValidator;
  *
  */
 @Controller
-@RequestMapping(value = "/loginUserCreate-confirm")
-public class LoginUserCreateConfirmController implements BaseSimplePostController<LoginUserCreateForm> {
+@RequestMapping(value = "/loginUserRegist-confirm")
+public class LoginUserRegistConfirmController implements BaseSimplePostController<LoginUserRegistForm> {
 
 	/**
 	 * ログインユーザ作成確認画面<br>
 	 */
 	@Override
 	public ArthurView postView(Model model, HttpServletRequest request, HttpServletResponse response,
-			@Validated LoginUserCreateForm form, BindingResult result) {
+			@Validated LoginUserRegistForm form, BindingResult result) {
 
 		if (result.hasErrors()) {
 			// validationエラーが存在する場合
-			return ArthurView.LOGIN_USER_CREATE_INPUT;
+			return ArthurView.LOGIN_USER_REGIST_INPUT;
 		}
 
 		// フォーム情報を設定
 		model.addAttribute("form", form);
 
-		return ArthurView.LOGIN_USER_CREATE_CONFIRM;
+		return ArthurView.LOGIN_USER_REGIST_CONFIRM;
 	}
 
 	/**

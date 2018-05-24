@@ -10,11 +10,11 @@
 	<artifactId>arthur-common</artifactId>
 	<name>arthur-common</name>
 	<packaging>jar</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<version>1.0</version>
 
 	<properties>
 		<java-version>9</java-version>
-		<org.springframework-version>5.0.5.RELEASE</org.springframework-version>
+		<org.springframework-version>5.0.6.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.9.1</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 		<org.jackson-version>2.9.5</org.jackson-version>
@@ -116,13 +116,13 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>24.1-jre</version>
+			<version>25.0-jre</version>
 		</dependency>
 		<!-- googleAPI -->
 		<dependency>
 			<groupId>com.google.apis</groupId>
 			<artifactId>google-api-services-genomics</artifactId>
-			<version>v1-rev545-1.23.0</version>
+			<version>v1-rev552-1.23.0</version>
 		</dependency>
 
 		<!-- DB -->
@@ -163,7 +163,7 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
+			<version>1.2.17</version>
 			<exclusions>
 				<exclusion>
 					<groupId>javax.mail</groupId>

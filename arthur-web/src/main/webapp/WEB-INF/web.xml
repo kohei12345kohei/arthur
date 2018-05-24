@@ -53,11 +53,11 @@
 		<!-- メニュー画面 -->
 		<url-pattern>/menu</url-pattern>
 		<!-- ログインユーザ作成入力画面 -->
-		<url-pattern>/loginUserCreate-input</url-pattern>
+		<url-pattern>/loginUserRegist-input</url-pattern>
 		<!-- ログインユーザ作成確認画面 -->
-		<url-pattern>/loginUserCreate-confirm</url-pattern>
+		<url-pattern>/loginUserRegist-confirm</url-pattern>
 		<!-- ログインユーザ作成完了画面 -->
-		<url-pattern>/loginUserCreate-complete</url-pattern>
+		<url-pattern>/loginUserRegist-complete</url-pattern>
 	</servlet-mapping>
 
 </web-app>

@@ -3,6 +3,7 @@ package jp.co.arthur.api.service;
 import jp.co.arthur.api.request.PurchaseRegistRequest;
 import jp.co.arthur.api.response.PurchaseRegistResponse;
 import jp.co.arthur.common.api.BaseService;
+import jp.co.arthur.common.entity.PurchaseInfo;
 import jp.co.arthur.common.exception.PurchaseException;
 
 /**
@@ -11,4 +12,10 @@ import jp.co.arthur.common.exception.PurchaseException;
  */
 public interface PurchaseRegistService extends BaseService<PurchaseRegistRequest, PurchaseRegistResponse, PurchaseException> {
 
+	/**
+	 * 商品購入情報EntityをResponseに変換する<br>
+	 * @param entity
+	 * @return
+	 */
+	PurchaseRegistResponse toResponse(PurchaseInfo entity);
 }
