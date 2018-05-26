@@ -22,7 +22,7 @@ public class ArthurExceptionHandler implements BaseExceptionHandler {
 										, HttpServletResponse response
 										, Object handler
 										, Exception e) {
-
+		e.printStackTrace();
 		ModelAndView model = new ModelAndView();
 		model.setViewName(ArthurView.ERROR.getUrl());
 		return model;

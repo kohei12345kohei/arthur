@@ -2,12 +2,12 @@ package jp.co.arthur.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,6 +39,15 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	private LoginUserSearchService loginUserSearchService;
 
 	/**
+	 * フォームクラスを返す<br>
+	 * @return
+	 */
+	@ModelAttribute
+	public LoginForm setUpForm() {
+		return new LoginForm();
+	}
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -51,7 +60,7 @@ public class LoginController implements BaseSimpleGetController, BaseSimplePostC
 	 */
 	@Override
 	public BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response
-			, @Validated @ModelAttribute("LoginForm") LoginForm form, BindingResult result) {
+			, @Valid LoginForm form, BindingResult result) {
 
 		if (result.hasErrors()) {
 			return ArthurView.LOGIN;

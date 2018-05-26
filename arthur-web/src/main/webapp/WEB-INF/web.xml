@@ -48,16 +48,7 @@
 
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<!-- ログイン画面 -->
-		<url-pattern>/login</url-pattern>
-		<!-- メニュー画面 -->
-		<url-pattern>/menu</url-pattern>
-		<!-- ログインユーザ作成入力画面 -->
-		<url-pattern>/loginUserRegist-input</url-pattern>
-		<!-- ログインユーザ作成確認画面 -->
-		<url-pattern>/loginUserRegist-confirm</url-pattern>
-		<!-- ログインユーザ作成完了画面 -->
-		<url-pattern>/loginUserRegist-complete</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 </web-app>

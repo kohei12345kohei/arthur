@@ -19,7 +19,7 @@ import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimplePostController;
 import jp.co.arthur.common.web.BaseView;
 import jp.co.arthur.web.form.LoginUserRegistForm;
-import jp.co.arthur.web.validator.LoginUserCreateValidator;
+import jp.co.arthur.web.validator.LoginUserRegistValidator;
 
 /**
  * ログインユーザ作成完了画面コントローラクラス<br>
@@ -37,9 +37,9 @@ public class LoginUserRegistCompleteController implements BaseSimplePostControll
 	 * {@inheritDoc}
 	 */
 	@Override
-	@InitBinder("LoginUserCreateForm")
+	@InitBinder("LoginUserRegistForm")
 	public void initBinder(WebDataBinder binder) {
-		binder.setValidator(new LoginUserCreateValidator());
+		binder.setValidator(new LoginUserRegistValidator());
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class LoginUserRegistCompleteController implements BaseSimplePostControll
 
 		LoginUser entity = new LoginUser();
 		BeanUtils.copyProperties(form, entity);
-		loginUserCreateService.regist(entity);
+		loginUserCreateService.create(entity);
 
 		model.addAttribute("form", form);
 
