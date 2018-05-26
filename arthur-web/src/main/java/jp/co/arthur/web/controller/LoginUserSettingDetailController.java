@@ -19,7 +19,7 @@ import jp.co.arthur.web.service.LoginUserSettingDetailService;
  *
  */
 @Controller
-@RequestMapping(value = "/loginUserDetail")
+@RequestMapping(value = "/loginUserSetting-Detail")
 public class LoginUserSettingDetailController implements BaseSimpleGetController {
 
 	/** ログインユーザ設定詳細画面サービス */

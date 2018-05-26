@@ -13,6 +13,7 @@ import org.springframework.util.MimeTypeUtils;
 
 import jp.co.arthur.common.exception.ArthurErrorCode;
 import jp.co.arthur.common.exception.BaseArthurIOException;
+import jp.co.arthur.common.file.csv.CsvConfig;
 import jp.co.arthur.common.file.csv.annotation.CsvColumn;
 import jp.co.arthur.common.file.csv.model.BaseCsvModel;
 import jp.co.arthur.common.other.Charset;
@@ -20,43 +21,33 @@ import jp.co.arthur.common.util.StringUtil;
 
 /**
  * CSV書込 基底クラス<br>
- * @param <T>CSV出力モデルリスト
+ *
+ * @param <T>
+ *            CSV出力モデルリスト
  */
 public abstract class BaseCsvWriter<T extends BaseCsvModel> {
 
-	/** 囲い文字(デフォルトでは空文字(未指定)) */
-	protected String enclosureChar = StringUtil.EMPTY;
+	/** CSV設定情報クラス */
+	private CsvConfig conf;
 	/** モデルリスト */
 	protected List<T> modelList;
 
 	/**
 	 * コンストラクタ<br>
-	 * @param enclosureChar 囲い文字
-	 * @param modelList 出力モデルクラスリスト
-	 */
-	public BaseCsvWriter(String enclosureChar, List<T> modelList) {
-		this.enclosureChar = enclosureChar;
-		this.modelList = modelList;
-	}
-
-	/**
-	 * modelListを返す
-	 * @return modelList
-	 */
-	public List<T> getModelList() {
-		return modelList;
-	}
-
-	/**
-	 * modelListを設定する
+	 *
+	 * @param conf
+	 *            CSV設定情報クラス
 	 * @param modelList
+	 *            出力モデルクラスリスト
 	 */
-	public void setModelList(List<T> modelList) {
+	public BaseCsvWriter(CsvConfig conf, List<T> modelList) {
+		this.conf = conf;
 		this.modelList = modelList;
 	}
 
 	/**
 	 * メイン処理を実施<br>
+	 *
 	 * @param response
 	 * @throws BaseArthurIOException
 	 */
@@ -87,55 +78,65 @@ public abstract class BaseCsvWriter<T extends BaseCsvModel> {
 
 	/**
 	 * 初期処理<br>
+	 *
 	 * @param response
+	 *            HttpServletResponse
 	 * @param fileName
 	 */
 	private void init(HttpServletResponse response, String fileName) {
 
-		response.setContentType(MimeTypeUtils.APPLICATION_OCTET_STREAM_VALUE + ";charset=" + Charset.UTF_8.toString().toLowerCase());
+		response.setContentType(
+				MimeTypeUtils.APPLICATION_OCTET_STREAM_VALUE + ";charset=" + Charset.UTF_8.toString().toLowerCase());
 		response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
 
 	}
 
 	/**
 	 * 指定されたデータの書き込み処理を行う<br>
+	 *
 	 * @param joiner
-	 * @param data 書き込みたいデータ
+	 *            StringJoiner
+	 * @param data
+	 *            書き込みたいデータ
 	 */
 	protected void write(StringJoiner joiner, String data) {
+		String enclosureChar = conf.isEnclosureFlag() ? conf.getEnclosureChar() : StringUtil.EMPTY;
 		joiner.add(enclosureChar + data + enclosureChar);
 	}
 
 	/**
 	 * 指定したクラス型のフィールドについた@CsvColumnのorder順にCsvOrderMapを返す<br>
+	 *
 	 * @param clazz
 	 * @return
 	 */
 	protected Map<Integer, CsvColumn> getCsvColumnOrder(Class<T> clazz) {
 
 		Map<Integer, CsvColumn> orderMap = new TreeMap<Integer, CsvColumn>();
-		List.of(clazz.getDeclaredFields()).stream().forEach(field -> {
-			CsvColumn column = field.getAnnotation(CsvColumn.class);
-			orderMap.put(column.order(), column);
-		});
+		List.of(clazz.getDeclaredFields()).stream()
+			.map(field -> field.getAnnotation(CsvColumn.class))
+			.forEach(column -> orderMap.put(column.order(), column));
 
 		return orderMap;
 	}
 
 	/**
 	 * ファイル名を取得<br>
+	 *
 	 * @return fileName
 	 */
 	protected abstract String getFileName();
 
 	/**
 	 * ヘッダーレコードをつめる<br>
+	 *
 	 * @param recordJoiner
 	 */
 	protected abstract void writeHeader(StringJoiner recordJoiner);
 
 	/**
 	 * データレコードをつめる<br>
+	 *
 	 * @param recordJoiner
 	 * @param model
 	 */
