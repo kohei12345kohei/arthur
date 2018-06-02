@@ -80,13 +80,13 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>25.0-jre</version>
+			<version>25.1-jre</version>
 		</dependency>
 		<!-- googleAPI -->
 		<dependency>
 			<groupId>com.google.apis</groupId>
 			<artifactId>google-api-services-genomics</artifactId>
-			<version>v1-rev552-1.23.0</version>
+			<version>v1-rev554-1.23.0</version>
 		</dependency>
 
 		<!-- json lib -->
