@@ -1,5 +1,7 @@
 package jp.co.arthur.common.exception;
 
+import java.util.stream.Stream;
+
 /**
  * アーサー例外コードenum
  *
@@ -45,7 +47,7 @@ public enum ArthurErrorCode {
 	 * @return errorCode
 	 */
 	public String getErrorCode() {
-		return errorCode;
+		return this.errorCode;
 	}
 
 	/**
@@ -53,7 +55,7 @@ public enum ArthurErrorCode {
 	 * @return errorMessage
 	 */
 	public String getErrorMessage() {
-		return errorMessage;
+		return this.errorMessage;
 	}
 
 	/**
@@ -62,12 +64,9 @@ public enum ArthurErrorCode {
 	 * @return
 	 */
 	public static ArthurErrorCode of(String errorCode) {
-
-		for (ArthurErrorCode arthurErrorCode : ArthurErrorCode.class.getEnumConstants()) {
-			if (arthurErrorCode.errorCode.equals(errorCode)) {
-				return arthurErrorCode;
-			}
-		}
-		return null;
+		return Stream.of(ArthurErrorCode.class.getEnumConstants())
+				.filter(code -> code.errorCode.equals(errorCode))
+				.findFirst()
+				.orElse(null);
 	}
 }

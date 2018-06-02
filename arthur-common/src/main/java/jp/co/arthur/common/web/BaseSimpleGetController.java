@@ -14,9 +14,13 @@ public interface BaseSimpleGetController {
 
 	/**
 	 * GET通信処理を行う<br>
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @return
 	 */
 	@GetMapping
@@ -27,9 +31,13 @@ public interface BaseSimpleGetController {
 
 	/**
 	 * 継承先で実装<br>
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @return
 	 */
 	BaseView getView(Model model, HttpServletRequest request, HttpServletResponse response);

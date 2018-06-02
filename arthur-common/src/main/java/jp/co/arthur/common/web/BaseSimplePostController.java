@@ -11,40 +11,57 @@ import org.springframework.web.bind.annotation.PostMapping;
 /**
  * POST通信の単一画面基底コントローラインターフェース<br>
  *
- * @param <F> フォームクラス
+ * @param <F>
+ *            フォームクラス
  */
 public interface BaseSimplePostController<F extends BaseForm> {
 
 	/**
 	 * Validateを設定<br>
+	 *
 	 * @param binder
+	 *            WebDataBinder
 	 */
 	void initBinder(WebDataBinder binder);
 
 	/**
 	 * POST通信処理を行う<br>
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @param form
+	 *            F
 	 * @param result
+	 *            BindingResult
 	 * @return
 	 */
 	@PostMapping
-	default String doPost(Model model, HttpServletRequest request, HttpServletResponse response, F form, BindingResult result) {
+	default String doPost(Model model, HttpServletRequest request, HttpServletResponse response, F form,
+			BindingResult result) {
 		BaseView view = this.postView(model, request, response, form, result);
 		return view.getUrl();
 	}
 
 	/**
 	 * 継承先で実装<br>
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @param form
+	 *            F
 	 * @param result
+	 *            BindingResult
 	 * @return
 	 */
-	BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form, BindingResult result);
+	BaseView postView(Model model, HttpServletRequest request, HttpServletResponse response, F form,
+			BindingResult result);
 
 }

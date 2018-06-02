@@ -14,15 +14,21 @@ import jp.co.arthur.common.exception.BaseArthurException;
 
 /**
  * ウィザード形式の基底コントローラクラス<br>
- * @param <F> フォームクラス
+ *
+ * @param <F>
+ *            フォームクラス
  */
 public interface BaseWizardController<F extends BaseForm> {
 
 	/**
 	 * 入力画面表示
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @return
 	 */
 	@GetMapping
@@ -39,15 +45,22 @@ public interface BaseWizardController<F extends BaseForm> {
 
 	/**
 	 * 確認画面表示
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @param form
+	 *            F
 	 * @param result
+	 *            BindingResult
 	 * @return
 	 */
 	@PostMapping
-	default String confirm(Model model, HttpServletRequest request, HttpServletResponse response, F form, BindingResult result) {
+	default String confirm(Model model, HttpServletRequest request, HttpServletResponse response, F form,
+			BindingResult result) {
 		BaseView view;
 		try {
 			view = this.confirmView(model, request, response, form, result);
@@ -58,14 +71,17 @@ public interface BaseWizardController<F extends BaseForm> {
 		return view.getUrl();
 	}
 
-
-
 	/**
 	 * 完了画面表示
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @param form
+	 *            F
 	 * @return
 	 */
 	@PostMapping
@@ -82,41 +98,67 @@ public interface BaseWizardController<F extends BaseForm> {
 
 	/**
 	 * Validateを設定<br>
+	 *
 	 * @param binder
+	 *            WebDataBinder
 	 */
 	void initBinder(WebDataBinder binder);
 
 	/**
 	 * 入力画面を描画する<br>
 	 * 継承先で実装<br>
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
-	 * @return
+	 *            HttpServletResponse
+	 * @return BaseView
+	 * @throws BaseArthurException
+	 *             例外クラス
 	 */
-	BaseView inputView(Model model, HttpServletRequest request, HttpServletResponse response) throws BaseArthurException;
+	BaseView inputView(Model model, HttpServletRequest request, HttpServletResponse response)
+			throws BaseArthurException;
 
 	/**
 	 * 確認画面を描画する<br>
 	 * 継承先で実装<br>
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @param form
+	 *            F
 	 * @param result
-	 * @return
+	 *            BindingResult
+	 * @return BaseView
+	 * @throws BaseArthurException
+	 *             例外クラス
 	 */
-	BaseView confirmView(Model model, HttpServletRequest request, HttpServletResponse response, @Valid F form, BindingResult result)throws BaseArthurException;
+	BaseView confirmView(Model model, HttpServletRequest request, HttpServletResponse response, @Valid F form,
+			BindingResult result) throws BaseArthurException;
 
 	/**
 	 * 完了画面を描画する<br>
 	 * 継承先で実装<br>
+	 *
 	 * @param model
+	 *            Model
 	 * @param request
+	 *            HttpServletRequest
 	 * @param response
+	 *            HttpServletResponse
 	 * @param form
+	 *            F
 	 * @return
+	 * @throws BaseArthurException
+	 *             例外クラス
 	 */
-	BaseView completeView(Model model, HttpServletRequest request, HttpServletResponse response, F form) throws BaseArthurException;
+	BaseView completeView(Model model, HttpServletRequest request, HttpServletResponse response, F form)
+			throws BaseArthurException;
 
 }
