@@ -11,14 +11,14 @@ import jp.co.arthur.web.form.LoginUserRegistForm;
  * アカウント作成画面valdiateクラス<br>
  *
  */
-public class LoginUserCreateValidator implements Validator {
+public class LoginUserRegistValidator implements Validator {
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return LoginUserCreateValidator.class.isAssignableFrom(clazz);
+		return LoginUserRegistValidator.class.isAssignableFrom(clazz);
 	}
 
 	/**

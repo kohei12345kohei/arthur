@@ -14,6 +14,8 @@ import com.google.common.base.Strings;
  */
 public class StringUtil {
 
+	/** ハイフン */
+	public static final String HYPHEN = "-";
 	/** 空文字 */
 	public static final String EMPTY = "";
 	/** スペース */

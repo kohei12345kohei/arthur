@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.common.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
@@ -18,6 +19,7 @@ import jp.co.arthur.web.service.LoginUserSettingDetailService;
  *
  */
 @Controller
+@RequestMapping(value = "/loginUserSetting-Detail")
 public class LoginUserSettingDetailController implements BaseSimpleGetController {
 
 	/** ログインユーザ設定詳細画面サービス */

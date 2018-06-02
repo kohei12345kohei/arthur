@@ -31,7 +31,7 @@ public class PurchaseRegistServiceImpl implements PurchaseRegistService {
 		PurchaseInfo entity = toEntity(request);
 
 		// DBに登録
-		purchaseCreateService.regist(entity);
+		purchaseCreateService.create(entity);
 
 		// responseに変換
 		PurchaseRegistResponse response = toResponse(entity);

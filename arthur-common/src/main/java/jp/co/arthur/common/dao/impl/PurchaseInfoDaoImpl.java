@@ -22,7 +22,7 @@ public class PurchaseInfoDaoImpl implements PurchaseInfoDao {
 	 */
 	@Update
 	@Override
-	public void update(PurchaseInfo purchaseInfo) {
+	public void update(PurchaseInfo entity) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}

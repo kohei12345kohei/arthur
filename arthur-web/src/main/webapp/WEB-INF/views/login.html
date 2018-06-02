@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>ログイン画面</title>
@@ -13,20 +13,22 @@
 
 	<div class="form-wrapper">
 		<h1>アーサーログイン画面</h1>
-		<form action="/arthur-web/login" name="loginForm" method="post">
+		<form action="./login" name="loginForm" method="post" th:object="${loginForm}">
 
 			<div th:if="${errorMessage} != null">
 				<div class="errorMessage">
 					<p th:text="${errorMessage}"></p>
 				</div>
 			</div>
+			<div th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}"></div>
+			<div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
 			<div class="form-item">
 				<label for="text"></label>
-				<input type="text" name="loginId" required="required" placeholder="ログインID" />
+				<input type="text" th:field="*{loginId}" required placeholder="ログインID" />
 			</div>
 			<div class="form-item">
 				<label for="password"></label>
-				<input type="password" name="password" required="required" placeholder="パスワード" />
+				<input type="password" th:field="*{password}" placeholder="パスワード" required />
 			</div>
 			<div class="button-panel">
 				<input type="submit" class="button" title="Sign In" value="Sign In"></input>

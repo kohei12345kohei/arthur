@@ -1,5 +1,7 @@
 package jp.co.arthur.business.db.create.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +24,16 @@ public class LoginUserCreateServiceImpl implements LoginUserCreateService {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void regist(LoginUser entity) {
+	public void create(LoginUser entity) {
 		loginUserDao.create(entity);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void create(List<LoginUser> entityList) {
+		entityList.stream().forEach(entity -> loginUserDao.create(entity));
 	}
 
 }

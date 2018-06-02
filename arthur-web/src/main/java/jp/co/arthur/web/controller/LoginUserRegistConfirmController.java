@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseSimplePostController;
 import jp.co.arthur.web.form.LoginUserRegistForm;
-import jp.co.arthur.web.validator.LoginUserCreateValidator;
+import jp.co.arthur.web.validator.LoginUserRegistValidator;
 
 /**
  * ログインユーザ作成確認コントローラクラス<br>
@@ -48,7 +48,11 @@ public class LoginUserRegistConfirmController implements BaseSimplePostControlle
 	@Override
 	@InitBinder("LoginUserCreateForm")
 	public void initBinder(WebDataBinder binder) {
-		binder.setValidator(new LoginUserCreateValidator());
+		binder.setValidator(new LoginUserRegistValidator());
+	}
+
+	public LoginUserRegistForm setUpForm() {
+		return new LoginUserRegistForm();
 	}
 
 }

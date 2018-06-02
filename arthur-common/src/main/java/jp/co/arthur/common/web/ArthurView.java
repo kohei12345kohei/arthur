@@ -40,7 +40,7 @@ public enum ArthurView implements BaseView {
 	 */
 	@Override
 	public String getUrl() {
-		return url;
+		return this.url;
 	}
 
 }

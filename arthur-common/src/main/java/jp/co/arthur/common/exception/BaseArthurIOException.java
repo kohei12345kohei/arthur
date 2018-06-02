@@ -3,6 +3,8 @@ package jp.co.arthur.common.exception;
 import java.io.IOException;
 import java.util.StringJoiner;
 
+import jp.co.arthur.common.util.StringUtil;
+
 /**
  * アーサーIO例外クラス<br>
  *
@@ -11,7 +13,6 @@ public class BaseArthurIOException extends IOException {
 
 	/** シリアルバージョンUID */
 	private static final long serialVersionUID = 1L;
-
 
 	/** アーサーエラーコード */
 	private ArthurErrorCode errorCode;
@@ -27,6 +28,7 @@ public class BaseArthurIOException extends IOException {
 
 	/**
 	 * 例外設定するコンストラクタ<br>
+	 *
 	 * @param errorCode
 	 */
 	public BaseArthurIOException(ArthurErrorCode errorCode) {
@@ -35,8 +37,11 @@ public class BaseArthurIOException extends IOException {
 
 	/**
 	 * 例外設定するコンストラクタ<br>
+	 *
 	 * @param errorCode
+	 *            エラーコード
 	 * @param execptionMessage
+	 *            例外メッセージ
 	 */
 	public BaseArthurIOException(ArthurErrorCode errorCode, String execptionMessage) {
 		this.errorCode = errorCode;
@@ -45,6 +50,7 @@ public class BaseArthurIOException extends IOException {
 
 	/**
 	 * errorCodeを返す<br>
+	 *
 	 * @return errorCode
 	 */
 	public ArthurErrorCode getErrorCode() {
@@ -56,7 +62,7 @@ public class BaseArthurIOException extends IOException {
 	 */
 	@Override
 	public String toString() {
-		StringJoiner joiner = new StringJoiner(" ");
+		StringJoiner joiner = new StringJoiner(StringUtil.SPACE);
 		joiner.add(this.errorCode.getErrorCode());
 		joiner.add(this.errorCode.getErrorMessage());
 		joiner.add(this.execptionMessage);
