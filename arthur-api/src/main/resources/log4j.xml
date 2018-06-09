@@ -9,33 +9,33 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
-	
+
 	<!-- Application Loggers -->
 	<logger name="jp.co.arthur">
 		<level value="info" />
 	</logger>
-	
+
 	<!-- 3rdparty Loggers -->
-	<logger name="org.springframework.core">
+<!-- 	<logger name="org.springframework.core">
 		<level value="info" />
 	</logger>
-	
+
 	<logger name="org.springframework.beans">
 		<level value="info" />
 	</logger>
-	
+
 	<logger name="org.springframework.context">
 		<level value="info" />
 	</logger>
 
 	<logger name="org.springframework.web">
 		<level value="info" />
-	</logger>
+	</logger> -->
 
 	<!-- Root Logger -->
-	<root>
+<!-- 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
-	</root>
-	
+	</root> -->
+
 </log4j:configuration>

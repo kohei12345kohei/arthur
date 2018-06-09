@@ -3,6 +3,9 @@
 	<name>arthur-web</name>
 	<comment></comment>
 	<projects>
+		<project>arthur-common</project>
+		<project>arthur-api</project>
+		<project>arthur-business</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,14 +1,48 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Home</title>
+<title>ログイン画面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="resources/image/favicon.png">
+<link rel="stylesheet" type="text/css" href="resources/css/loginLayout.css">
+<script type="text/javascript" src="resources/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="resources/js/login.js"></script>
+<script type="text/javascript" src="resources/js/loginUserCreate.js"></script>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+	<div class="form-wrapper">
+		<h1>アーサーログイン画面</h1>
+		<form action="./login" name="loginForm" method="post" th:object="${loginForm}">
+
+			<div th:if="${errorMessage} != null">
+				<div class="errorMessage">
+					<p th:text="${errorMessage}"></p>
+				</div>
+			</div>
+			<div th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}"></div>
+			<div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+			<div class="form-item">
+				<label for="text"></label>
+				<input type="text" th:field="*{loginId}" required placeholder="ログインID" />
+			</div>
+			<div class="form-item">
+				<label for="password"></label>
+				<input type="password" th:field="*{password}" placeholder="パスワード" required />
+			</div>
+			<div class="button-panel">
+				<input type="submit" class="button" title="Sign In" value="Sign In"></input>
+			</div>
+			<div class="button-panel">
+				<input type="button" class="button" value="アカウント作成" onclick="regist();" />
+			</div>
+		</form>
+		<div class="form-footer">
+			<!-- 			<p>
+				<a href="#">パスワードを忘れた場合</a>
+			</p> -->
+		</div>
+	</div>
+
 </body>
 </html>
