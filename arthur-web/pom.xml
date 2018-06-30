@@ -6,7 +6,7 @@
 
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>jp.co</groupId>
+	<groupId>jp.co.arthur.web</groupId>
 	<artifactId>arthur-web</artifactId>
 	<name>arthur-web</name>
 	<packaging>war</packaging>
@@ -14,7 +14,7 @@
 
 	<properties>
 		<java-version>9</java-version>
-		<org.springframework-version>5.0.6.RELEASE</org.springframework-version>
+		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
 		<org.thymeleaf-version>3.0.9.RELEASE</org.thymeleaf-version>
 		<org.aspectj-version>1.9.1</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
@@ -187,10 +187,16 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>jp.co</groupId>
-			<artifactId>arthur</artifactId>
-			<version>1.0.0-BUILD-SNAPSHOT</version>
+		<!-- arthur lib -->
+<!-- 		<dependency>
+			<groupId>jp.co.arthur.common</groupId>
+			<artifactId>arthur-common</artifactId>
+			<version>1.0</version>
+		</dependency> -->
+<!-- 		<dependency>
+			<groupId>jp.co.arthur.business</groupId>
+			<artifactId>arthur-business</artifactId>
+			<version>1.0</version>
 		</dependency> -->
 	</dependencies>
 
