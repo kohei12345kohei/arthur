@@ -14,6 +14,7 @@ public interface PurchaseCreateService {
 	 * 登録する<br>
 	 *
 	 * @param entity
+	 *            PurchaseInfo
 	 */
 	void create(PurchaseInfo entity);
 
@@ -21,6 +22,7 @@ public interface PurchaseCreateService {
 	 * 登録する
 	 *
 	 * @param entityList
+	 *            List<PurchaseInfo>
 	 */
 	void create(List<PurchaseInfo> entityList);
 

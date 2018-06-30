@@ -18,7 +18,7 @@ import jp.co.arthur.common.exception.BaseArthurException;
  *
  */
 @RestController
-@RequestMapping(value = "/purchaseRegist", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
+@RequestMapping(value = "/purchaseRegist", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, consumes = { MediaType.APPLICATION_JSON_UTF8_VALUE })
 public class PurchaseRegistController implements BaseApiRestController<PurchaseRegistRequest, PurchaseRegistResponse> {
 
 	/** 購入商品情報登録サービス */

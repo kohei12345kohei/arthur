@@ -10,6 +10,7 @@ public interface LoginUserCreateService {
 	 * 作成
 	 *
 	 * @param entity
+	 *            LoginUser
 	 */
 	void create(LoginUser entity);
 
@@ -17,6 +18,7 @@ public interface LoginUserCreateService {
 	 * 作成
 	 *
 	 * @param entityList
+	 *            List<LoginUser>
 	 */
 	void create(List<LoginUser> entityList);
 

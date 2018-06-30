@@ -10,14 +10,18 @@ public interface LoginUserSearchService {
 
 	/**
 	 * 指定されたログインIDのログインユーザ情報を検索する<br>
+	 *
 	 * @param loginId
+	 *            ログインID
 	 * @return
 	 */
 	LoginUser findByLoginId(String loginId);
 
 	/**
 	 * 指定されたアカウントのログインユーザ情報を検索する<br>
+	 *
 	 * @param account
+	 *            アカウント
 	 * @return
 	 */
 	LoginUser findByAccount(String account);

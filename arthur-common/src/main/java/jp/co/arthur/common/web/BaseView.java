@@ -18,18 +18,18 @@ public interface BaseView {
 
 	/**
 	 * 指定したEnumクラスの指定した値と一致するEnumを返す<br>
-	 * 一致するenumがない場合nullを返す<br>
+	 * 一致するEnumがない場合nullを返す<br>
 	 *
-	 * @param view
+	 * @param viewClass
 	 *            BaseViewを継承したViewのEnum
 	 * @param url
 	 *            検査したい値
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public static <V extends BaseView> V of(Class<? extends BaseView> view, String url) {
-		return (V) Stream.of(view.getEnumConstants())
-				.filter(baseView -> baseView.getUrl().equals(url))
+	public static <V extends BaseView> V of(Class<? extends BaseView> viewClass, String url) {
+		return (V) Stream.of(viewClass.getEnumConstants())
+				.filter(view -> view.getUrl().equals(url))
 				.findFirst()
 				.orElse(null);
 	}
