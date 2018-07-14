@@ -25,7 +25,8 @@ public class LoginUserRegistForm implements BaseForm {
 
 	/**
 	 * loginIdを返す<br>
-	 * @return loginId
+	 *
+	 * @return loginId ログインID
 	 */
 	public String getLoginId() {
 		return loginId;
@@ -33,7 +34,9 @@ public class LoginUserRegistForm implements BaseForm {
 
 	/**
 	 * loginIdを設定する<br>
+	 *
 	 * @param loginId
+	 *            ログインID
 	 */
 	public void setLoginId(String loginId) {
 		this.loginId = loginId;
@@ -41,7 +44,8 @@ public class LoginUserRegistForm implements BaseForm {
 
 	/**
 	 * passwordを返す<br>
-	 * @return password
+	 *
+	 * @return password パスワード
 	 */
 	public String getPassword() {
 		return password;
@@ -49,7 +53,9 @@ public class LoginUserRegistForm implements BaseForm {
 
 	/**
 	 * passwordを設定する<br>
+	 *
 	 * @param password
+	 *            パスワード
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -57,7 +63,8 @@ public class LoginUserRegistForm implements BaseForm {
 
 	/**
 	 * confirmPasswordを返す<br>
-	 * @return confirmPassword
+	 *
+	 * @return confirmPassword 確認用パスワード
 	 */
 	public String getConfirmPassword() {
 		return confirmPassword;
@@ -65,7 +72,9 @@ public class LoginUserRegistForm implements BaseForm {
 
 	/**
 	 * confirmPasswordを設定する<br>
+	 *
 	 * @param confirmPassword
+	 *            確認用パスワード
 	 */
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;

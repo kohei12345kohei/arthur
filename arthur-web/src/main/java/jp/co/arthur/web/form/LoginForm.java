@@ -25,28 +25,37 @@ public class LoginForm implements BaseForm {
 
 	/**
 	 * loginIdを返す<br>
-	 * @return loginId
+	 *
+	 * @return loginId ログインID
 	 */
 	public String getLoginId() {
 		return loginId;
 	}
+
 	/**
 	 * loginIdを設定する<br>
+	 *
 	 * @param loginId
+	 *            ログインID
 	 */
 	public void setLoginId(String loginId) {
 		this.loginId = loginId;
 	}
+
 	/**
 	 * passwordを返す<br>
-	 * @return password
+	 *
+	 * @return password パスワード
 	 */
 	public String getPassword() {
 		return password;
 	}
+
 	/**
 	 * passwordを設定する<br>
+	 *
 	 * @param password
+	 *            パスワード
 	 */
 	public void setPassword(String password) {
 		this.password = password;

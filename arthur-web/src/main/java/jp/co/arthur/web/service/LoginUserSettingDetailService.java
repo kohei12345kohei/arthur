@@ -10,7 +10,9 @@ public interface LoginUserSettingDetailService {
 
 	/**
 	 * 指定されたログインIDからログインユーザ情報を取得する<br>
+	 *
 	 * @param loginId
+	 *            ログインID
 	 * @return
 	 */
 	LoginUser getLoginUser(String loginId);

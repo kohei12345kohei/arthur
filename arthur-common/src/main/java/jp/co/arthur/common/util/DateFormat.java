@@ -1,10 +1,12 @@
 package jp.co.arthur.common.util;
 
+import jp.co.arthur.common.other.BaseEnum;
+
 /**
  * 日付のフォーマットenum
  *
  */
-public enum DateFormat {
+public enum DateFormat implements BaseEnum {
 
 	YYYYMMDD("yyyy/MM/dd"),
 	YYYYMMDD_HHMMSS("yyyy/MM/dd hh:mm:ss");
