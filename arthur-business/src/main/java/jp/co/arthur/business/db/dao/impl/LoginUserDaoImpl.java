@@ -1,4 +1,4 @@
-package jp.co.arthur.common.dao.impl;
+package jp.co.arthur.business.db.dao.impl;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,11 +14,9 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.stereotype.Repository;
 
-import jp.co.arthur.common.dao.LoginUserDao;
+import jp.co.arthur.business.db.dao.LoginUserDao;
 import jp.co.arthur.common.entity.LoginUser;
-import jp.co.arthur.common.other.Insert;
-import jp.co.arthur.common.other.OsDefine;
-import jp.co.arthur.common.other.Select;
+import jp.co.arthur.common.type.OsDefine;
 import jp.co.arthur.common.util.DateFormat;
 import jp.co.arthur.common.util.DateUtil;
 
@@ -35,7 +33,6 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Select
 	@Override
 	public LoginUser findByLoginId(String loginId) {
 
@@ -78,7 +75,6 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Insert
 	@Override
 	public void create(LoginUser entity) {
 
@@ -112,7 +108,6 @@ public class LoginUserDaoImpl implements LoginUserDao {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Select
 	@Override
 	public LoginUser findByAccount(String account) {
 

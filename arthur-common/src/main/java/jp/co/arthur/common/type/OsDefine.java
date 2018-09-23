@@ -1,4 +1,4 @@
-package jp.co.arthur.common.other;
+package jp.co.arthur.common.type;
 
 /**
  * OS定義<br>

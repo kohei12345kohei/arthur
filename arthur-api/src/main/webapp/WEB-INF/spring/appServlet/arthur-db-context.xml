@@ -33,7 +33,7 @@
 	</bean>
 	<tx:annotation-driven />
 
-	<bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl" />
-	<bean id="purchaseInfoDao" class="jp.co.arthur.common.dao.impl.PurchaseInfoDaoImpl" />
+	<bean id="loginUserDao" class="jp.co.arthur.business.db.dao.impl.LoginUserDaoImpl" />
+	<bean id="purchaseInfoDao" class="jp.co.arthur.business.db.dao.impl.PurchaseInfoDaoImpl" />
 
 </beans>

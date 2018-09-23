@@ -1,4 +1,4 @@
-package jp.co.arthur.common.dao;
+package jp.co.arthur.business.db.dao;
 
 import java.util.List;
 

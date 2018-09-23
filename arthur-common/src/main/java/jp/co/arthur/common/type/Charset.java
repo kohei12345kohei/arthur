@@ -1,4 +1,4 @@
-package jp.co.arthur.common.other;
+package jp.co.arthur.common.type;
 
 /**
  * Charset列挙<br>
