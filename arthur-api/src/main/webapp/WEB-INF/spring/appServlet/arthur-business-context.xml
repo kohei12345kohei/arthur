@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc
 						http://www.springframework.org/schema/mvc/spring-mvc.xsd
@@ -10,13 +12,13 @@
 						http://www.springframework.org/schema/context
 						http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<annotation-driven />
+	<mvc:annotation-driven />
 
 	<!-- 購入商品情報 登録サービス -->
-	<beans:bean id="purchaseCreateService" class="jp.co.arthur.business.db.create.impl.PurchaseCreateServiceImpl" />
+	<bean id="purchaseCreateService" class="jp.co.arthur.business.db.create.impl.PurchaseCreateServiceImpl" />
 
 	<!-- ログインユーザ情報 検索サービス -->
-	<beans:bean id="loginUserSearchService" class="jp.co.arthur.business.db.select.impl.LoginUserSearchServiceImpl" />
+	<bean id="loginUserSearchService" class="jp.co.arthur.business.db.select.impl.LoginUserSearchServiceImpl" />
 
 
-</beans:beans>
+</beans>
