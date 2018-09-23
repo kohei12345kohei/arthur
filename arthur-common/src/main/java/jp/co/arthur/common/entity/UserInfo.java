@@ -3,9 +3,6 @@ package jp.co.arthur.common.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-
 /**
  * ユーザ情報Entity<br>
  * ユーザ情報の設定を定義<br>
@@ -17,16 +14,10 @@ public class UserInfo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/** アカウント */
-	@Id
-	@Column(name = "ACCOUNT", nullable = false, length = 16)
 	private String account;
-
-
 	/** 登録日時 */
-	@Column(name = "REG_DATE", nullable = false)
 	private Date regDate;
 	/** 更新日時 */
-	@Column(name = "UPDATE_DATE", nullable = true)
 	private Date updateDate;
 
 
