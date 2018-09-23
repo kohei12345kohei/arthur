@@ -14,8 +14,6 @@
 
 	<mvc:annotation-driven />
 
-	<mvc:resources mapping="/resources/**" location="/resources/" />
-
 	<context:component-scan base-package="jp.co.arthur.api.controller" />
 	<context:component-scan base-package="jp.co.arthur.api.service.impl" />
 

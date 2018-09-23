@@ -5,7 +5,8 @@
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-        <dependent-module archiveName="arthur-1.0.0-BUILD-SNAPSHOT.war" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-common/arthur-common">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <dependent-module archiveName="arthur-common-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-common/arthur-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
 		<property name="java-output-path" value="target/classes"/>
