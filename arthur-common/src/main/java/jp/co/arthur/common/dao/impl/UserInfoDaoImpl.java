@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.Iterator;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -61,8 +60,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
 			e.printStackTrace();
 		} catch (EncryptedDocumentException e) {
 			e.printStackTrace();
-		} catch (InvalidFormatException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -103,8 +100,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
 			}
 
 		} catch (EncryptedDocumentException e) {
-			e.printStackTrace();
-		} catch (InvalidFormatException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
