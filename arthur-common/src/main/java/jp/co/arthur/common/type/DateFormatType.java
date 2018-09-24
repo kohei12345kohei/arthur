@@ -1,6 +1,4 @@
-package jp.co.arthur.common.util;
-
-import jp.co.arthur.common.type.BaseEnum;
+package jp.co.arthur.common.type;
 
 /**
  * 日付のフォーマットの列挙

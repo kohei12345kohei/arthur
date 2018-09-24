@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 
 /**
  * ウィザード形式の基底コントローラ<br>
@@ -59,13 +58,5 @@ public abstract class BaseWizardController<F extends BaseForm> {
 	 * @return
 	 */
 	protected abstract String complete(Model model, HttpServletRequest request, HttpServletResponse response, F form);
-
-	/**
-	 * Validateを設定<br>
-	 *
-	 * @param binder WebDataBinder
-	 * @param request HttpServletRequest
-	 */
-	protected abstract void initBinder(WebDataBinder binder, HttpServletRequest request);
 
 }
