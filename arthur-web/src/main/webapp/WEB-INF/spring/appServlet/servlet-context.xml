@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx ="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc
 						http://www.springframework.org/schema/mvc/spring-mvc.xsd
 						http://www.springframework.org/schema/beans
 						http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/context
-						http://www.springframework.org/schema/context/spring-context.xsd">
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<annotation-driven />
+	<mvc:annotation-driven />
 
-	<resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 
-	<beans:bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".html" />
-		<beans:property name="templateMode" value="HTML" />
-		<beans:property name="characterEncoding" value="UTF-8" />
-	</beans:bean>
-	<beans:bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
-		<beans:property name="templateResolver" ref="templateResolver" />
-	</beans:bean>
-	<beans:bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
-		<beans:property name="templateEngine" ref="templateEngine" />
-		<!-- ここで設定していないとhtmlを描画時に日本語が文字化けする -->
-		<beans:property name="characterEncoding" value="UTF-8" />
-	</beans:bean>
-	<beans:bean id="exceptionHandler" class="jp.co.arthur.web.exception.ArthurExceptionHandler" />
+	<bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".html" />
+		<property name="templateMode" value="HTML" />
+		<property name="characterEncoding" value="UTF-8" />
+	</bean>
+	<bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+		<property name="templateResolver" ref="templateResolver" />
+	</bean>
+	<bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+		<property name="templateEngine" ref="templateEngine" />
+		<property name="characterEncoding" value="UTF-8" />
+	</bean>
+	<bean id="exceptionHandler" class="jp.co.arthur.web.exception.ArthurExceptionHandler" />
 	<context:component-scan base-package="jp.co.arthur.web.controller" />
 	<context:component-scan base-package="jp.co.arthur.web.service.impl" />
 	<context:component-scan base-package="jp.co.arthur.web.config" />
 
-</beans:beans>
+</beans>

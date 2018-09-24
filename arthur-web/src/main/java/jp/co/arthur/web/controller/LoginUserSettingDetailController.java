@@ -8,10 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.arthur.common.entity.LoginUser;
+import jp.co.arthur.business.db.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
-import jp.co.arthur.common.web.BaseSimpleGetController;
-import jp.co.arthur.common.web.BaseView;
 import jp.co.arthur.web.service.LoginUserSettingDetailService;
 
 /**
@@ -20,7 +18,7 @@ import jp.co.arthur.web.service.LoginUserSettingDetailService;
  */
 @Controller
 @RequestMapping(value = "/loginUserSetting-Detail")
-public class LoginUserSettingDetailController implements BaseSimpleGetController {
+public class LoginUserSettingDetailController {
 
 	/** ログインユーザ設定詳細画面サービス */
 	@Autowired
@@ -29,8 +27,7 @@ public class LoginUserSettingDetailController implements BaseSimpleGetController
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
-	public BaseView getView(Model model, HttpServletRequest request, HttpServletResponse response) {
+	public String getView(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		// sessionに保持しているアカウントからログインユーザ情報を取得する
 		String account = (String) request.getSession().getAttribute("account");
@@ -39,7 +36,7 @@ public class LoginUserSettingDetailController implements BaseSimpleGetController
 		model.addAttribute("entity", entity);
 
 
-		return ArthurView.LOGIN_USER_SETTING_DETAIL;
+		return ArthurView.LOGIN_USER_SETTING_DETAIL.getUrl();
 	}
 
 }

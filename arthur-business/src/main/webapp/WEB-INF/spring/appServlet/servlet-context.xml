@@ -15,10 +15,10 @@
 	<mvc:annotation-driven />
 
 	<!-- ログインユーザDao -->
-	<bean id="loginUserDao" class="jp.co.arthur.common.dao.impl.LoginUserDaoImpl" />
+	<bean id="loginUserDao" class="jp.co.arthur.business.db.dao.impl.LoginUserDaoImpl" />
 	<!-- 購入商品情報Dao -->
-	<bean id="purchaseInfoDao" class="jp.co.arthur.common.dao.impl.PurchaseInfoDaoImpl" />
+	<bean id="purchaseInfoDao" class="jp.co.arthur.business.db.dao.impl.PurchaseInfoDaoImpl" />
 	<!-- ユーザ情報Dao -->
-	<bean id="userInfoDao" class="jp.co.arthur.common.dao.impl.UserInfoDaoImpl" />
+	<bean id="userInfoDao" class="jp.co.arthur.business.db.dao.impl.UserInfoDaoImpl" />
 
 </beans>

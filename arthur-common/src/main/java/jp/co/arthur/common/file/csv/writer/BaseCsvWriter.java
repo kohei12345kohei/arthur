@@ -16,7 +16,7 @@ import jp.co.arthur.common.exception.BaseArthurIOException;
 import jp.co.arthur.common.file.csv.CsvConfig;
 import jp.co.arthur.common.file.csv.annotation.CsvColumn;
 import jp.co.arthur.common.file.csv.model.BaseCsvModel;
-import jp.co.arthur.common.other.Charset;
+import jp.co.arthur.common.type.Charset;
 import jp.co.arthur.common.util.StringUtil;
 
 /**

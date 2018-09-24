@@ -8,6 +8,8 @@ import com.google.common.base.Splitter;
 import com.google.common.base.Splitter.MapSplitter;
 import com.google.common.base.Strings;
 
+import jp.co.arthur.common.type.FlagType;
+
 /**
  * 文字列のUtilクラス<br>
  *
@@ -24,10 +26,6 @@ public class StringUtil {
 	public static final String AND = "&";
 	/** = */
 	public static final String EQUAL = "=";
-	/** フラグ値：true */
-	public static final String FLG_TRUE = "1";
-	/** フラグ値：false */
-	public static final String FLG_FALSE = "0";
 	/** 改行 */
 	public static final String NEW_LINE = "\r\n";
 
@@ -101,7 +99,7 @@ public class StringUtil {
 	 * @return
 	 */
 	public static boolean isTrue(String target) {
-		return FLG_TRUE.equals(target);
+		return FlagType.TRUE.getValue().equals(target);
 	}
 
 	/**

@@ -22,12 +22,13 @@
 		<org.jackson-version>2.9.6</org.jackson-version>
 		<poi-version>4.0.0</poi-version>
 		<mysql-version>8.0.12</mysql-version>
+		<doma-version>2.19.3</doma-version>
 	</properties>
 
 	<modules>
 		<module>../arthur-api</module>
-		<module>../arthur-common</module>
 		<module>../arthur-business</module>
+		<module>../arthur-common</module>
 		<module>../arthur-web</module>
 	</modules>
 
@@ -218,6 +219,17 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql-version}</version>
+		</dependency>
+		<!-- Doma -->
+		<dependency>
+			<groupId>org.seasar.doma</groupId>
+			<artifactId>doma</artifactId>
+			<version>${doma-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seasar.doma</groupId>
+			<artifactId>doma-gen</artifactId>
+			<version>${doma-version}</version>
 		</dependency>
 
 		<!-- Servlet -->
