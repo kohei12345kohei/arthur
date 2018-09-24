@@ -1,9 +1,11 @@
 package jp.co.arthur.web.form;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
+import jp.co.arthur.common.log.annotation.Mask;
+import jp.co.arthur.common.type.RegixType;
+import jp.co.arthur.common.validator.annotation.Max;
+import jp.co.arthur.common.validator.annotation.Min;
+import jp.co.arthur.common.validator.annotation.Pattern;
+import jp.co.arthur.common.validator.annotation.Required;
 import jp.co.arthur.common.web.BaseForm;
 
 /**
@@ -13,14 +15,17 @@ import jp.co.arthur.common.web.BaseForm;
 public class LoginForm implements BaseForm {
 
 	/** ログインID */
-	@NotEmpty(message = "ログインIDは必須です")
-	@Pattern(regexp = "^[0-9a-zA-Z]*$", message = "ログインIDが半角英数でありません")
-	@Size(min = 2, max = 16, message = "ログインIDが範囲外の値です")
+	@Required(message = "ログインIDは必須です")
+	@Pattern(regixPattern = RegixType.HALF_CHAR, message = "ログインIDが半角英数でありません")
+	@Max(size = 16, message = "ログインIDが範囲外の値です")
+	@Min(size = 4, message = "ログインIDが範囲外の値です")
 	private String loginId;
 	/** パスワード */
-	@NotEmpty(message = "パスワードが未入力です")
-	@Pattern(regexp = "^[0-9a-zA-Z]*$", message = "パスワードが半角英数でありません")
-	@Size(min = 2, max = 16, message = "パスワードが範囲外の値です")
+	@Mask
+	@Required(message = "パスワードは必須です")
+	@Pattern(regixPattern = RegixType.HALF_CHAR, message = "パスワードが半角英数でありません")
+	@Max(size = 16, message = "パスワードが範囲外の値です")
+	@Min(size = 4, message = "パスワードが範囲外の値です")
 	private String password;
 
 	/**

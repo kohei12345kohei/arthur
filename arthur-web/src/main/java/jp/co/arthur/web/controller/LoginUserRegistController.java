@@ -37,12 +37,18 @@ public class LoginUserRegistController extends BaseWizardController<LoginUserReg
 		return new LoginUserRegistForm();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	@GetMapping("/input")
 	protected String input(Model model, HttpServletRequest request, HttpServletResponse response) {
 		return ArthurView.LOGIN_USER_REGIST_INPUT.getUrl();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	@PostMapping("/confirm")
 	protected String confirm(Model model, HttpServletRequest request, HttpServletResponse response,
