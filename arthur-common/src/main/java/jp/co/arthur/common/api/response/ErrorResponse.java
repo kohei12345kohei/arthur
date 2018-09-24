@@ -1,4 +1,4 @@
-package jp.co.arthur.common.api;
+package jp.co.arthur.common.api.response;
 
 import jp.co.arthur.common.exception.ArthurErrorCode;
 import jp.co.arthur.common.exception.BaseArthurException;
