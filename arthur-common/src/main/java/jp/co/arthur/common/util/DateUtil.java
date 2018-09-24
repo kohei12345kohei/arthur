@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import jp.co.arthur.common.type.DateFormatType;
+
 /**
  * 日付のUtilクラス<br>
  *

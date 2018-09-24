@@ -1,13 +1,13 @@
 -- 定数情報
 create table PARAM (
     -- メインキー
-    MAINKEY varchar2(64),
+    MAINKEY VARCHAR(64),
     -- サブキー
-    SUBKEY varchar2(64),
+    SUBKEY VARCHAR(64),
     -- 値
-    VALUE varchar2(64),
+    VALUE VARCHAR(64),
     -- コメント
-    COMMENT varchar2(64),
+    COMMENT VARCHAR(64),
     -- 登録日時
-    REG_DATE date
+    REG_DATE TIMESTAMP
 )

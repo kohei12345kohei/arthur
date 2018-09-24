@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +19,6 @@ import jp.co.arthur.business.db.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseWizardController;
 import jp.co.arthur.web.form.LoginUserRegistForm;
-import jp.co.arthur.web.validator.LoginUserRegistValidator;
 
 /**
  * ログインユーザ作成完了画面コントローラクラス<br>
@@ -38,15 +35,6 @@ public class LoginUserRegistController extends BaseWizardController<LoginUserReg
 	@ModelAttribute("loginUserRegistForm")
 	public LoginUserRegistForm setUpForm() {
 		return new LoginUserRegistForm();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	@InitBinder("loginUserRegistForm")
-	public void initBinder(WebDataBinder binder, HttpServletRequest request) {
-		binder.addValidators(new LoginUserRegistValidator());
 	}
 
 	@Override

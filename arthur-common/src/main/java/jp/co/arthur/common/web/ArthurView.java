@@ -1,12 +1,10 @@
 package jp.co.arthur.common.web;
 
-import jp.co.arthur.common.type.BaseEnum;
-
 /**
  * アーサーURL定義<br>
  *
  */
-public enum ArthurView implements BaseView, BaseEnum {
+public enum ArthurView implements BaseView {
 
 	/** ログイン画面 */
 	LOGIN("login/index"),
