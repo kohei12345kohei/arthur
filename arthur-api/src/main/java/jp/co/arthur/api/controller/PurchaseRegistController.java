@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jp.co.arthur.api.request.PurchaseRegistRequest;
 import jp.co.arthur.api.response.PurchaseRegistResponse;
 import jp.co.arthur.api.service.PurchaseRegistService;
-import jp.co.arthur.common.api.BaseApiRestController;
+import jp.co.arthur.common.api.controller.BaseApiRestController;
 import jp.co.arthur.common.exception.BaseArthurException;
 
 /**

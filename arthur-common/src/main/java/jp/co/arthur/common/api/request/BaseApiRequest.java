@@ -1,4 +1,4 @@
-package jp.co.arthur.common.api;
+package jp.co.arthur.common.api.request;
 
 /**
  * API基底リクエストクラス<br>

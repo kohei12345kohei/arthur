@@ -1,4 +1,4 @@
-package jp.co.arthur.common.api;
+package jp.co.arthur.common.api.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import jp.co.arthur.common.api.request.BaseApiRequest;
+import jp.co.arthur.common.api.response.BaseApiResponse;
+import jp.co.arthur.common.api.response.ErrorResponse;
 import jp.co.arthur.common.exception.BaseArthurException;
 
 /**

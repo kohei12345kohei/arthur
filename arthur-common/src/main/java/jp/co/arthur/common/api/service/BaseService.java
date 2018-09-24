@@ -1,5 +1,7 @@
-package jp.co.arthur.common.api;
+package jp.co.arthur.common.api.service;
 
+import jp.co.arthur.common.api.request.BaseApiRequest;
+import jp.co.arthur.common.api.response.BaseApiResponse;
 import jp.co.arthur.common.exception.BaseArthurException;
 
 /**
