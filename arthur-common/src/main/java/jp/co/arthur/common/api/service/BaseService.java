@@ -12,8 +12,6 @@ import jp.co.arthur.common.exception.BaseArthurException;
  *            リクエスト種別
  * @param <Rs>
  *            レスポンス種別
- * @param <E>
- *            例外種別
  */
 public interface BaseService<Rq extends BaseApiRequest, Rs extends BaseApiResponse> {
 

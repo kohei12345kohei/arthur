@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import jp.co.arthur.common.api.request.BaseApiRequest;
 import jp.co.arthur.common.api.response.BaseApiResponse;
 import jp.co.arthur.common.api.response.ErrorResponse;
+import jp.co.arthur.common.api.type.ResultType;
 import jp.co.arthur.common.exception.BaseArthurException;
 
 /**
@@ -30,7 +31,7 @@ public abstract class BaseApiRestController<Rq extends BaseApiRequest, Rs extend
 		Rs response = null;
 		try {
 			response = this.execute(request);
-			response.setResult(0);
+			response.setResult(ResultType.SUCCESS);
 		} catch (BaseArthurException e) {
 			response = (Rs) new ErrorResponse(e);
 			System.out.println(e.toString());

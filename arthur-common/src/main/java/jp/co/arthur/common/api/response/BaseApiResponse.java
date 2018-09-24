@@ -1,5 +1,7 @@
 package jp.co.arthur.common.api.response;
 
+import jp.co.arthur.common.api.type.ResultType;
+
 /**
  * API基底レスポンスクラス<br>
  *
@@ -7,13 +9,13 @@ package jp.co.arthur.common.api.response;
 public abstract class BaseApiResponse {
 
 	/** 結果 */
-	private int result;
+	private ResultType result;
 
 	/**
 	 * resultを返す<br>
 	 * @return result
 	 */
-	public int getResult() {
+	public ResultType getResult() {
 		return result;
 	}
 
@@ -21,7 +23,7 @@ public abstract class BaseApiResponse {
 	 * resultを設定する<br>
 	 * @param result
 	 */
-	public void setResult(int result) {
+	public void setResult(ResultType result) {
 		this.result = result;
 	}
 
