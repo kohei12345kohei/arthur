@@ -1,6 +1,6 @@
 package jp.co.arthur.common.web;
 
-import jp.co.arthur.common.other.BaseEnum;
+import jp.co.arthur.common.type.BaseEnum;
 
 /**
  * アーサーURL定義<br>
@@ -9,25 +9,25 @@ import jp.co.arthur.common.other.BaseEnum;
 public enum ArthurView implements BaseView, BaseEnum {
 
 	/** ログイン画面 */
-	LOGIN("login"),
+	LOGIN("login/index"),
 	/** メニュー画面 */
-	MENU("menu"),
+	TOP("top/index"),
 	/** エラー画面 */
-	ERROR("error"),
+	ERROR("error/index"),
 	/** ログインユーザ作成入力画面 */
-	LOGIN_USER_REGIST_INPUT("loginUserRegist-input"),
+	LOGIN_USER_REGIST_INPUT("loginUserRegist/input"),
 	/** ログインユーザ作成確認画面 */
-	LOGIN_USER_REGIST_CONFIRM("loginUserRegist-confirm"),
+	LOGIN_USER_REGIST_CONFIRM("loginUserRegist/confirm"),
 	/** ログインユーザ作成完了画面 */
-	LOGIN_USER_REGIST_COMPLETE("loginUserRegist-complete"),
+	LOGIN_USER_REGIST_COMPLETE("loginUserRegist/complete"),
 	/** ログインユーザ設定詳細画面 */
-	LOGIN_USER_SETTING_DETAIL("loginUserSetting-detail"),
+	LOGIN_USER_SETTING_DETAIL("loginUserSetting/detail"),
 	/** ログインユーザ設定入力画面 */
-	LOGIN_USER_SETTING_INPUT("loginUserSetting-input"),
+	LOGIN_USER_SETTING_INPUT("loginUserSetting/input"),
 	/** ログインユーザ設定確認画面 */
-	LOGIN_USER_SETTING_CONFIRM("loginUserSetting-confirm"),
+	LOGIN_USER_SETTING_CONFIRM("loginUserSetting/confirm"),
 	/** ログインユーザ設定完了画面 */
-	LOGIN_USER_SETTING_COMPLETE("loginUserSetting-complete"),
+	LOGIN_USER_SETTING_COMPLETE("loginUserSetting/complete"),
 	;
 
 	/** URL */
@@ -43,6 +43,10 @@ public enum ArthurView implements BaseView, BaseEnum {
 	@Override
 	public String getUrl() {
 		return this.url;
+	}
+
+	public static ArthurView of(String url) {
+		return BaseView.of(ArthurView.class, url);
 	}
 
 }

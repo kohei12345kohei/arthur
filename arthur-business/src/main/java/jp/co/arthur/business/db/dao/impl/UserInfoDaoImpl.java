@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 import jp.co.arthur.business.db.dao.UserInfoDao;
 import jp.co.arthur.business.db.entity.UserInfo;
 import jp.co.arthur.common.type.OsDefine;
-import jp.co.arthur.common.util.DateFormat;
+import jp.co.arthur.common.util.DateFormatType;
 import jp.co.arthur.common.util.DateUtil;
 
 /**
@@ -45,8 +45,8 @@ public class UserInfoDaoImpl implements UserInfoDao {
 			Row newRow = sheet.createRow(sheet.getLastRowNum() + 1);
 
 			newRow.createCell(0).setCellValue(entity.getAccount());
-			newRow.createCell(1).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormat.YYYYMMDD_HHMMSS));
-			newRow.createCell(2).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormat.YYYYMMDD_HHMMSS));
+			newRow.createCell(1).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormatType.YYYYMMDD_HHMMSS));
+			newRow.createCell(2).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormatType.YYYYMMDD_HHMMSS));
 
 			fos.flush();
 			workbook.write(fos);
@@ -89,8 +89,8 @@ public class UserInfoDaoImpl implements UserInfoDao {
 				if (account.equals(row.getCell(0).getStringCellValue())) {
 
 					loginUser.setAccount(row.getCell(0).getStringCellValue());
-					loginUser.setRegDate(DateUtil.toDate(row.getCell(1).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
-					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(2).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
+					loginUser.setRegDate(DateUtil.toDate(row.getCell(1).getStringCellValue(), DateFormatType.YYYYMMDD_HHMMSS));
+					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(2).getStringCellValue(), DateFormatType.YYYYMMDD_HHMMSS));
 
 				}
 			}

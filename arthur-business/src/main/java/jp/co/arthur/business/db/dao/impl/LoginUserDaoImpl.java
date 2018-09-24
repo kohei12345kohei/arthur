@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 import jp.co.arthur.business.db.dao.LoginUserDao;
 import jp.co.arthur.business.db.entity.LoginUser;
 import jp.co.arthur.common.type.OsDefine;
-import jp.co.arthur.common.util.DateFormat;
+import jp.co.arthur.common.util.DateFormatType;
 import jp.co.arthur.common.util.DateUtil;
 
 /**
@@ -57,8 +57,8 @@ public class LoginUserDaoImpl implements LoginUserDao {
 					loginUser.setLoginId(row.getCell(0).getStringCellValue());
 					loginUser.setPassword(row.getCell(1).getStringCellValue());
 					loginUser.setAccount(row.getCell(2).getStringCellValue());
-					loginUser.setRegDate(DateUtil.toDate(row.getCell(3).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
-					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(4).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
+					loginUser.setRegDate(DateUtil.toDate(row.getCell(3).getStringCellValue(), DateFormatType.YYYYMMDD_HHMMSS));
+					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(4).getStringCellValue(), DateFormatType.YYYYMMDD_HHMMSS));
 
 				}
 			}
@@ -88,8 +88,8 @@ public class LoginUserDaoImpl implements LoginUserDao {
 			newRow.createCell(0).setCellValue(entity.getLoginId());
 			newRow.createCell(1).setCellValue(entity.getPassword());
 			newRow.createCell(2).setCellValue(entity.getAccount());
-			newRow.createCell(3).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormat.YYYYMMDD_HHMMSS));
-			newRow.createCell(4).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormat.YYYYMMDD_HHMMSS));
+			newRow.createCell(3).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormatType.YYYYMMDD_HHMMSS));
+			newRow.createCell(4).setCellValue(DateUtil.toString(DateUtil.getSysDate(), DateFormatType.YYYYMMDD_HHMMSS));
 
 			fos.flush();
 			workbook.write(fos);
@@ -133,8 +133,8 @@ public class LoginUserDaoImpl implements LoginUserDao {
 					loginUser.setLoginId(row.getCell(0).getStringCellValue());
 					loginUser.setPassword(row.getCell(1).getStringCellValue());
 					loginUser.setAccount(row.getCell(2).getStringCellValue());
-					loginUser.setRegDate(DateUtil.toDate(row.getCell(3).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
-					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(4).getStringCellValue(), DateFormat.YYYYMMDD_HHMMSS));
+					loginUser.setRegDate(DateUtil.toDate(row.getCell(3).getStringCellValue(), DateFormatType.YYYYMMDD_HHMMSS));
+					loginUser.setUpdateDate(DateUtil.toDate(row.getCell(4).getStringCellValue(), DateFormatType.YYYYMMDD_HHMMSS));
 
 				}
 			}
