@@ -37,7 +37,7 @@ public class LoginController {
 	 * @param response
 	 * @return
 	 */
-	@GetMapping("index")
+	@GetMapping("/index")
 	public BaseView index(Model model, HttpServletRequest request, HttpServletResponse response) {
 		return ArthurView.LOGIN;
 	}

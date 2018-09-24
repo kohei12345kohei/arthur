@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jp.co.arthur.business.db.crud.select.LoginUserSearchService;
 import jp.co.arthur.business.db.entity.LoginUser;
 import jp.co.arthur.common.exception.ArthurErrorCode;
+import jp.co.arthur.common.system.SessionManageService;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.web.form.LoginForm;
 import jp.co.arthur.web.service.LoginService;
@@ -32,6 +33,9 @@ public class TopController {
 	/** ログインユーザ情報検索サービス */
 	@Autowired
 	private LoginUserSearchService loginUserSearchService;
+	/** session管理サービス */
+	@Autowired
+	private SessionManageService sessionService;
 
 	/**
 	 * Top画面
@@ -41,10 +45,11 @@ public class TopController {
 	 * @param result
 	 * @return
 	 */
-	@PostMapping("index")
-	public String index(Model model, HttpServletRequest request
-			, @Valid LoginForm form, BindingResult result) {
+	@PostMapping("/index")
+	public String index(Model model, HttpServletRequest request, @Valid LoginForm form, BindingResult result) {
+
 		if (result.hasErrors()) {
+			// validationエラーの場合
 			return ArthurView.LOGIN.getUrl();
 		}
 		LoginUser entity = loginUserSearchService.findByLoginId(form.getLoginId());
@@ -57,12 +62,13 @@ public class TopController {
 
 		// sessionにアカウントを保持（画面描画時のアカウント表示に使う為）
 		request.getSession().setAttribute("account", entity.getAccount());
+		sessionService.setValue(request.getSession(),"account", entity.getAccount());
 		model.addAttribute("account", entity.getAccount());
 
 		return ArthurView.TOP.getUrl();
 	}
 
-	@GetMapping("index")
+	@GetMapping("/index")
 	public String index(Model model, HttpServletRequest request) {
 		return ArthurView.TOP.getUrl();
 	}

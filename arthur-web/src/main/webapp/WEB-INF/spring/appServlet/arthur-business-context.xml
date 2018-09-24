@@ -25,4 +25,7 @@
 	<!-- ログインユーザ情報 作成サービス -->
 	<bean id="loginUserCreateService" class="jp.co.arthur.business.db.crud.create.impl.LoginUserCreateServiceImpl" />
 
+	<!-- session管理サービス -->
+	<bean id="sessionManageService" class="jp.co.arthur.common.system.impl.SessionManageServiceImpl" />
+
 </beans>
