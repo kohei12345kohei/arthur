@@ -18,8 +18,8 @@
 	<mvc:annotation-driven />
 
 	<!-- ログインユーザ情報 検索サービス -->
-	<bean id="loginUserSearchService" class="jp.co.arthur.business.db.select.impl.LoginUserSearchServiceImpl" />
+	<bean id="loginUserSearchService" class="jp.co.arthur.business.db.crud.select.impl.LoginUserSearchServiceImpl" />
 	<!-- ログインユーザ情報 作成サービス -->
-	<bean id="loginUserCreateService" class="jp.co.arthur.business.db.create.impl.LoginUserCreateServiceImpl" />
+	<bean id="loginUserCreateService" class="jp.co.arthur.business.db.crud.create.impl.LoginUserCreateServiceImpl" />
 
 </beans>

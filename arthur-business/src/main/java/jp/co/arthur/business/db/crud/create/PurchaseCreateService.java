@@ -1,8 +1,8 @@
-package jp.co.arthur.business.db.create;
+package jp.co.arthur.business.db.crud.create;
 
 import java.util.List;
 
-import jp.co.arthur.common.entity.PurchaseInfo;
+import jp.co.arthur.business.db.entity.PurchaseInfo;
 
 /**
  * 購入商品情報作成サービスインターフェース

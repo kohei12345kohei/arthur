@@ -3,7 +3,7 @@ package jp.co.arthur.business.db.dao;
 import org.seasar.doma.Insert;
 import org.seasar.doma.Select;
 
-import jp.co.arthur.common.entity.LoginUser;
+import jp.co.arthur.business.db.entity.LoginUser;
 
 /**
  * ログインユーザDao<br>

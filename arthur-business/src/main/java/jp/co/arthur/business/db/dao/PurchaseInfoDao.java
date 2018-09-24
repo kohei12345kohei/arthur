@@ -2,7 +2,8 @@ package jp.co.arthur.business.db.dao;
 
 import java.util.List;
 
-import jp.co.arthur.common.entity.PurchaseInfo;
+import jp.co.arthur.business.db.entity.PurchaseInfo;
+
 
 /**
  * 購入商品情報Dao<br>

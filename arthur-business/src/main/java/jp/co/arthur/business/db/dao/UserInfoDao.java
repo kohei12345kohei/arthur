@@ -1,6 +1,6 @@
 package jp.co.arthur.business.db.dao;
 
-import jp.co.arthur.common.entity.UserInfo;
+import jp.co.arthur.business.db.entity.UserInfo;
 
 /**
  * ユーザ情報Dao<br>

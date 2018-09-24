@@ -15,7 +15,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.stereotype.Repository;
 
 import jp.co.arthur.business.db.dao.UserInfoDao;
-import jp.co.arthur.common.entity.UserInfo;
+import jp.co.arthur.business.db.entity.UserInfo;
 import jp.co.arthur.common.type.OsDefine;
 import jp.co.arthur.common.util.DateFormat;
 import jp.co.arthur.common.util.DateUtil;

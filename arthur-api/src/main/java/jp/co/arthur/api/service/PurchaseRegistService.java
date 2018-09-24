@@ -2,8 +2,8 @@ package jp.co.arthur.api.service;
 
 import jp.co.arthur.api.request.PurchaseRegistRequest;
 import jp.co.arthur.api.response.PurchaseRegistResponse;
+import jp.co.arthur.business.db.entity.PurchaseInfo;
 import jp.co.arthur.common.api.BaseService;
-import jp.co.arthur.common.entity.PurchaseInfo;
 import jp.co.arthur.common.exception.PurchaseException;
 
 /**
