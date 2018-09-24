@@ -1,10 +1,7 @@
 package jp.co.arthur.common.api.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import jp.co.arthur.common.api.request.BaseApiRequest;
 import jp.co.arthur.common.api.response.BaseApiResponse;
@@ -19,22 +16,19 @@ import jp.co.arthur.common.exception.BaseArthurException;
  * @param <Rs>
  *            レスポンスクラス
  */
-public interface BaseApiRestController<Rq extends BaseApiRequest, Rs extends BaseApiResponse> {
+public abstract class BaseApiRestController<Rq extends BaseApiRequest, Rs extends BaseApiResponse> {
 
 	/**
-	 * GET通信での処理を行う<br>
+	 * POST通信での処理を行う<br>
 	 *
-	 * @param req
-	 *            HttpServletRequest
-	 * @param resp
-	 *            HttpServletResponse
-	 * @return
+	 * @param request
+	 *            Rq extends BaseApiReques
+	 * @return Rs extends BaseApiResponse
 	 */
-	@GetMapping
-	default Rs doGet(HttpServletRequest req, HttpServletResponse resp) {
+	@PostMapping
+	public Rs doPost(@RequestBody Rq request) {
 		Rs response = null;
 		try {
-			Rq request = toRequest(req);
 			response = this.execute(request);
 			response.setResult(0);
 		} catch (BaseArthurException e) {
@@ -45,20 +39,6 @@ public interface BaseApiRestController<Rq extends BaseApiRequest, Rs extends Bas
 	}
 
 	/**
-	 * POST通信での処理を行う<br>
-	 *
-	 * @param req
-	 *            HttpServletRequest
-	 * @param resp
-	 *            HttpServletResponse
-	 * @return
-	 */
-	@PostMapping
-	default Rs doPost(HttpServletRequest req, HttpServletResponse resp) {
-		return doGet(req, resp);
-	}
-
-	/**
 	 * 継承先で主処理を実装<br>
 	 *
 	 * @param request
@@ -66,16 +46,6 @@ public interface BaseApiRestController<Rq extends BaseApiRequest, Rs extends Bas
 	 * @return APIレスポンスクラス Rs
 	 * @throws BaseArthurException
 	 */
-	Rs execute(Rq request) throws BaseArthurException;
-
-	/**
-	 * Requestクラスに変換する<br>
-	 *
-	 * @param request
-	 *            HttpServletRequest
-	 * @return APIリクエストクラス
-	 * @throws BaseArthurException
-	 */
-	Rq toRequest(HttpServletRequest request) throws BaseArthurException;
+	protected abstract Rs execute(Rq request) throws BaseArthurException;
 
 }

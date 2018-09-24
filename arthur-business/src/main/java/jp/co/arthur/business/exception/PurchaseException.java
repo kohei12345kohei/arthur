@@ -1,4 +1,6 @@
-package jp.co.arthur.common.exception;
+package jp.co.arthur.business.exception;
+
+import jp.co.arthur.common.exception.BaseArthurException;
 
 public class PurchaseException extends BaseArthurException {
 

@@ -15,7 +15,7 @@ import jp.co.arthur.common.exception.BaseArthurException;
  * @param <E>
  *            例外種別
  */
-public interface BaseService<Rq extends BaseApiRequest, Rs extends BaseApiResponse, E extends BaseArthurException> {
+public interface BaseService<Rq extends BaseApiRequest, Rs extends BaseApiResponse> {
 
 	/**
 	 * 継承先でそれぞれチェックを実装<br>
@@ -25,7 +25,7 @@ public interface BaseService<Rq extends BaseApiRequest, Rs extends BaseApiRespon
 	 * @throws E
 	 *             例外実装クラス
 	 */
-	void checkRequest(Rq request) throws E;
+	void checkRequest(Rq request) throws BaseArthurException;
 
 	/**
 	 * メイン処理<br>
@@ -36,6 +36,6 @@ public interface BaseService<Rq extends BaseApiRequest, Rs extends BaseApiRespon
 	 * @return Rs Response実装クラス
 	 * @throws E
 	 */
-	Rs execute(Rq request) throws E;
+	Rs execute(Rq request) throws BaseArthurException;
 
 }
