@@ -19,6 +19,7 @@
 *.zip
 *.tar.gz
 *.rar
+*.lst
 
 #ビルド成果物
 /target/
