@@ -68,6 +68,12 @@ public class TopController {
 		return ArthurView.TOP.getUrl();
 	}
 
+	/**
+	 * Top画面
+	 * @param model
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("/index")
 	public String index(Model model, HttpServletRequest request) {
 		return ArthurView.TOP.getUrl();

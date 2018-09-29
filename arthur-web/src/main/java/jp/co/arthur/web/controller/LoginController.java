@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.common.web.ArthurView;
-import jp.co.arthur.common.web.BaseView;
 import jp.co.arthur.web.form.LoginForm;
 
 /**
@@ -38,8 +37,8 @@ public class LoginController {
 	 * @return
 	 */
 	@GetMapping("/index")
-	public BaseView index(Model model, HttpServletRequest request, HttpServletResponse response) {
-		return ArthurView.LOGIN;
+	public String index(Model model, HttpServletRequest request, HttpServletResponse response) {
+		return ArthurView.LOGIN.getUrl();
 	}
 
 }

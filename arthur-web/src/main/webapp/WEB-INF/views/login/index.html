@@ -3,11 +3,8 @@
 <head>
 <title>ログイン画面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="resources/image/favicon.png">
-<link rel="stylesheet" type="text/css" href="resources/css/loginLayout.css">
-<script type="text/javascript" src="resources/js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="resources/js/login.js"></script>
-<script type="text/javascript" src="resources/js/loginUserCreate.js"></script>
+<link rel="shortcut icon" href="../resources/image/favicon.png" th:href="@{/resources/image/favicon.png}">
+<link rel="stylesheet" type="text/css" href="../resources/css/loginLayout.css" th:href="@{/resources/css/loginLayout.css}">
 </head>
 <body>
 
@@ -43,6 +40,8 @@
 			</p> -->
 		</div>
 	</div>
-
+<script type="text/javascript" src="../resources/js/lib/jquery.js" th:src="@{/resources/js/lib/jquery.js}"></script>
+<script type="text/javascript" src="../resources/js/login.js" th:src="@{/resources/js/login.js}"></script>
+<script type="text/javascript" src="../resources/js/loginUserCreate.js" th:src="@{/resources/js/loginUserCreate.js}"></script>
 </body>
 </html>

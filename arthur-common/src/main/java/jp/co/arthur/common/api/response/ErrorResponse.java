@@ -1,5 +1,6 @@
 package jp.co.arthur.common.api.response;
 
+import jp.co.arthur.common.api.type.ResultType;
 import jp.co.arthur.common.exception.ArthurErrorCode;
 import jp.co.arthur.common.exception.BaseArthurException;
 
@@ -20,7 +21,7 @@ public class ErrorResponse extends BaseApiResponse {
 	 * @param e
 	 */
 	public ErrorResponse(BaseArthurException e) {
-		super.setResult(1);
+		super.setResult(ResultType.FALIURE);
 		this.errorCode = e.getErrorCode();
 		this.detail = e.getDetail();
 	}
