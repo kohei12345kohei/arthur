@@ -20,7 +20,7 @@
 
 	<dependencies>
 		<!-- arthur lib -->
-<!--
+
 		<dependency>
 			<groupId>jp.co.arthur.common</groupId>
 			<artifactId>arthur-common</artifactId>
@@ -31,7 +31,11 @@
 			<artifactId>arthur-business</artifactId>
 			<version>1.0</version>
 		</dependency>
--->
+ 		<dependency>
+			<groupId>jp.co.arthur.db</groupId>
+			<artifactId>arthur-db</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
