@@ -24,8 +24,8 @@
 		<constructor-arg>
 			<bean
 				class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-				<property name="driverClassName" value="jdbc:mysql://localhost:3306/kingdom?serverTimezone=JST" />
-				<property name="url" value="jdbc:mysql://localhost:3306/sample" />
+				<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/kingdom?serverTimezone=JST" />
 				<property name="username" value="root" />
 				<property name="password" value="admin" />
 			</bean>

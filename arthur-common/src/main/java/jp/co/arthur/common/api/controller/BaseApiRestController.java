@@ -26,6 +26,7 @@ public abstract class BaseApiRestController<Rq extends BaseApiRequest, Rs extend
 	 *            Rq extends BaseApiReques
 	 * @return Rs extends BaseApiResponse
 	 */
+	@SuppressWarnings("unchecked")
 	@PostMapping
 	public Rs doPost(@RequestBody Rq request) {
 		Rs response = null;
