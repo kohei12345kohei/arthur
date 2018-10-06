@@ -2,7 +2,7 @@ package jp.co.arthur.business.db.crud.create;
 
 import java.util.List;
 
-import jp.co.arthur.business.db.entity.LoginUser;
+import jp.co.arthur.db.entity.LoginUser;
 
 public interface LoginUserCreateService {
 

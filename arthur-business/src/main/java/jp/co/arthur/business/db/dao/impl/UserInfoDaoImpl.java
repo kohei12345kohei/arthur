@@ -3,7 +3,7 @@ package jp.co.arthur.business.db.dao.impl;
 import org.springframework.stereotype.Repository;
 
 import jp.co.arthur.business.db.dao.UserInfoDao;
-import jp.co.arthur.business.db.entity.UserInfo;
+import jp.co.arthur.db.entity.UserInfo;
 
 /**
  * ユーザ情報Dao実装クラス<br>
@@ -19,7 +19,6 @@ public class UserInfoDaoImpl implements UserInfoDao {
 	public void create(UserInfo entity) {
 
 	}
-
 
 	/**
 	 * {@inheritDoc}

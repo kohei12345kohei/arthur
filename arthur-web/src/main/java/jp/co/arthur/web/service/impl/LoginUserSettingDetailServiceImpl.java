@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jp.co.arthur.business.db.crud.select.LoginUserSearchService;
-import jp.co.arthur.business.db.entity.LoginUser;
+import jp.co.arthur.db.entity.LoginUser;
 import jp.co.arthur.web.service.LoginUserSettingDetailService;
 
 /**

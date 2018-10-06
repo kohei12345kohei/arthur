@@ -1,9 +1,6 @@
 package jp.co.arthur.business.db.dao;
 
-import org.seasar.doma.Insert;
-import org.seasar.doma.Select;
-
-import jp.co.arthur.business.db.entity.LoginUser;
+import jp.co.arthur.db.entity.LoginUser;
 
 /**
  * ログインユーザDao<br>
@@ -21,7 +18,6 @@ public interface LoginUserDao {
 	 *            ログインID
 	 * @return
 	 */
-	@Select
 	LoginUser findByLoginId(String loginId);
 
 	/**
@@ -31,7 +27,6 @@ public interface LoginUserDao {
 	 *            アカウント
 	 * @return
 	 */
-	@Select
 	LoginUser findByAccount(String account);
 
 	/**
@@ -40,7 +35,6 @@ public interface LoginUserDao {
 	 * @param entity
 	 *            LoginUser
 	 */
-	@Insert
 	void create(LoginUser entity);
 
 }

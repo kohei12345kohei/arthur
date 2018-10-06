@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Service;
 
-import jp.co.arthur.business.db.entity.LoginUser;
+import jp.co.arthur.db.entity.LoginUser;
 import jp.co.arthur.web.service.LoginService;
 
 /**

@@ -1,6 +1,6 @@
 package jp.co.arthur.business.db.crud.select;
 
-import jp.co.arthur.business.db.entity.LoginUser;
+import jp.co.arthur.db.entity.LoginUser;
 
 /**
  * ログインユーザ情報検索サービスインターフェース<br>

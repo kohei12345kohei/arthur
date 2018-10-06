@@ -1,6 +1,6 @@
 package jp.co.arthur.web.service;
 
-import jp.co.arthur.business.db.entity.LoginUser;
+import jp.co.arthur.db.entity.LoginUser;
 
 /**
  * ログインサービス<br>

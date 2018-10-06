@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.arthur.business.db.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
+import jp.co.arthur.db.entity.LoginUser;
 import jp.co.arthur.web.service.LoginUserSettingDetailService;
 
 /**

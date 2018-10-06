@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.business.db.crud.create.LoginUserCreateService;
-import jp.co.arthur.business.db.entity.LoginUser;
 import jp.co.arthur.common.web.ArthurView;
 import jp.co.arthur.common.web.BaseWizardController;
+import jp.co.arthur.db.entity.LoginUser;
 import jp.co.arthur.web.form.LoginUserRegistForm;
 
 /**
