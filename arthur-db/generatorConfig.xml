@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 
-	<classPathEntry location="" />
+	<classPathEntry location="C:\kingdom\git\arthur\arthur-common\lib\mysql-connector-java-8.0.12.jar" />
 
 	<context id="context1">
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
@@ -27,6 +27,7 @@
 			type="XMLMAPPER" />
 
 		<table schema="kingdom" tableName="LOGIN_USER" />
+		<table schema="kingdom" tableName="USER_INFO" />
 		<table schema="kingdom" tableName="PARAM" />
 		<table schema="kingdom" tableName="PURCHASE_INFO" />
 	</context>

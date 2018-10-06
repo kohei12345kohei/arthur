@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.arthur.business.db.crud.select.LoginUserSearchService;
-import jp.co.arthur.business.db.entity.LoginUser;
 import jp.co.arthur.common.exception.ArthurErrorCode;
 import jp.co.arthur.common.system.SessionManageService;
 import jp.co.arthur.common.web.ArthurView;
+import jp.co.arthur.db.entity.LoginUser;
 import jp.co.arthur.web.form.LoginForm;
 import jp.co.arthur.web.service.LoginService;
 

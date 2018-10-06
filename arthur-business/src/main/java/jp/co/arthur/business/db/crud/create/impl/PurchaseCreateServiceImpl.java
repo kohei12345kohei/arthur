@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import jp.co.arthur.business.db.crud.create.PurchaseCreateService;
 import jp.co.arthur.business.db.dao.PurchaseInfoDao;
-import jp.co.arthur.business.db.entity.PurchaseInfo;
+import jp.co.arthur.db.entity.PurchaseInfo;
 
 /**
  * 購入商品情報登録サービス実装クラス<br>

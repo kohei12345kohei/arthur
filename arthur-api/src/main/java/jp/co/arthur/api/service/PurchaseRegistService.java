@@ -2,8 +2,8 @@ package jp.co.arthur.api.service;
 
 import jp.co.arthur.api.request.PurchaseRegistRequest;
 import jp.co.arthur.api.response.PurchaseRegistResponse;
-import jp.co.arthur.business.db.entity.PurchaseInfo;
 import jp.co.arthur.common.api.service.BaseService;
+import jp.co.arthur.db.entity.PurchaseInfo;
 
 /**
  * 購入商品登録サービス<br>

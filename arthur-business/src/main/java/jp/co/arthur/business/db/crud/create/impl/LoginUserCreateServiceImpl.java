@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import jp.co.arthur.business.db.crud.create.LoginUserCreateService;
 import jp.co.arthur.business.db.dao.LoginUserDao;
-import jp.co.arthur.business.db.entity.LoginUser;
+import jp.co.arthur.db.entity.LoginUser;
 
 /**
  * ログインユーザ情報 作成サービス実装クラス<br>

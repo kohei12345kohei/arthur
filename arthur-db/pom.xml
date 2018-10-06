@@ -18,4 +18,15 @@
 		<relativePath>../arthur-pom</relativePath>
 	</parent>
 
+	<dependencies>
+		<!-- arthur lib -->
+
+		<dependency>
+			<groupId>jp.co.arthur.common</groupId>
+			<artifactId>arthur-common</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+	</dependencies>
+
 </project>
