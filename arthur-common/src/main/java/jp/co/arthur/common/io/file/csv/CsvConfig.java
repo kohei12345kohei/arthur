@@ -1,4 +1,4 @@
-package jp.co.arthur.common.file.csv;
+package jp.co.arthur.common.io.file.csv;
 
 /**
  * CSV設定情報<br>
