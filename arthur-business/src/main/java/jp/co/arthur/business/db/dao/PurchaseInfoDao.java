@@ -10,9 +10,6 @@ import jp.co.arthur.db.entity.PurchaseInfo;
  */
 public interface PurchaseInfoDao {
 
-	/** テーブル名 */
-	public static final String TABLE_NAME = "PURCHASE_INFO";
-
 	/**
 	 * 更新
 	 *
