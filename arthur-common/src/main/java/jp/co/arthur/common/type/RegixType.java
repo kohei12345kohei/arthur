@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
  * 正規表現列挙<br>
  *
  */
-public enum RegixType {
+public enum RegixType implements BaseEnum {
 
 	/** 半角数字 */
 	HALF_NUMBER("^[0-9]*$"),
@@ -20,7 +20,7 @@ public enum RegixType {
 	MAIL_ADDRESS("[A-Za-z0-9._+]+@[A-Za-z]+.[A-Za-z]");
 
 	/** 正規表現 */
-	private String pattern;
+	private String value;
 
 	/**
 	 * コンストラクタ<br>
@@ -28,8 +28,8 @@ public enum RegixType {
 	 * @param pattern
 	 *     正規表現
 	 */
-	private RegixType(String pattern) {
-		this.pattern = pattern;
+	private RegixType(String value) {
+		this.value = value;
 	}
 
 	/**
@@ -37,8 +37,9 @@ public enum RegixType {
 	 *
 	 * @return
 	 */
-	public String getPattern() {
-		return this.pattern;
+	@Override
+	public String getValue() {
+		return this.value;
 	}
 
 	/**
@@ -52,7 +53,7 @@ public enum RegixType {
 	 * @return
 	 */
 	public static boolean isPattern(String target, RegixType pattern) {
-		return Pattern.compile(pattern.getPattern()).matcher(target).find();
+		return Pattern.compile(pattern.getValue()).matcher(target).find();
 	}
 
 }

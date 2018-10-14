@@ -22,7 +22,6 @@ public abstract class BaseArthurException extends Exception {
 	 * デフォルトコンストラクタ<br>
 	 */
 	public BaseArthurException() {
-
 	}
 
 	/**

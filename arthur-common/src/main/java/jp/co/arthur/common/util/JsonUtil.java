@@ -7,11 +7,16 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import jp.co.arthur.common.log.Logger;
+import jp.co.arthur.common.log.LoggerFactory;
+
 /**
  * JsonのUtilクラス<br>
  *
  */
 public class JsonUtil {
+
+	private static final Logger LOG = LoggerFactory.getLogger(JsonUtil.class);
 
 	/**
 	 * プライベートコンストラクタ<br>
@@ -32,11 +37,11 @@ public class JsonUtil {
 		try {
 			t = mapper.readValue(target, clazz);
 		} catch (JsonParseException e) {
-			e.printStackTrace();
+			LOG.error("json形式でない", e);
 		} catch (JsonMappingException e) {
-			e.printStackTrace();
+			LOG.error("jsonとjavaオブジェクトが紐づいていない", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOG.error("", e);
 		}
 		return t;
 	}
