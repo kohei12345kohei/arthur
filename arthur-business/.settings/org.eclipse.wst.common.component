@@ -5,6 +5,9 @@
         <dependent-module archiveName="arthur-common-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-common/arthur-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="arthur-db-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/arthur-db/arthur-db">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
 		<property name="java-output-path" value="target/classes"/>
         <property name="context-root" value="arthur-business"/>
 	</wb-module>

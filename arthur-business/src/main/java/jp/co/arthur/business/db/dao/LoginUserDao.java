@@ -8,9 +8,6 @@ import jp.co.arthur.db.entity.LoginUser;
  */
 public interface LoginUserDao {
 
-	/** テーブル名 */
-	public static final String TABLE_NAME = "LOGIN_USER";
-
 	/**
 	 * ログインIDからログインユーザを返す<br>
 	 *

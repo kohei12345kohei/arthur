@@ -13,7 +13,7 @@ import jp.co.arthur.common.validator.annotation.Url;
  */
 public class UrlValidator implements ConstraintValidator<Url, String> {
 
-	private final String REGIX = RegixType.URL.getPattern();
+	private final String REGIX = RegixType.URL.getValue();
 
 	/**
 	 * {@inheritDoc}

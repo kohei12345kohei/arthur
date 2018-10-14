@@ -28,7 +28,7 @@
 
 		<table schema="kingdom" tableName="LOGIN_USER" />
 		<table schema="kingdom" tableName="USER_INFO" />
-		<table schema="kingdom" tableName="PARAM" />
 		<table schema="kingdom" tableName="PURCHASE_INFO" />
+		<table schema="kingdom" tableName="PREFECTURES_MT" />
 	</context>
 </generatorConfiguration>

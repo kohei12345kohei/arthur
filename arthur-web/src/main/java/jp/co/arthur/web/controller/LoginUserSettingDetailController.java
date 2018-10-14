@@ -1,7 +1,6 @@
 package jp.co.arthur.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +26,7 @@ public class LoginUserSettingDetailController {
 	/**
 	 * {@inheritDoc}
 	 */
-	public String getView(Model model, HttpServletRequest request, HttpServletResponse response) {
+	public String getView(Model model, HttpServletRequest request) {
 
 		// sessionに保持しているアカウントからログインユーザ情報を取得する
 		String account = (String) request.getSession().getAttribute("account");

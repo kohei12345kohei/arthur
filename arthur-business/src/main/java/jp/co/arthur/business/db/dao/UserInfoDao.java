@@ -8,9 +8,6 @@ import jp.co.arthur.db.entity.UserInfo;
  */
 public interface UserInfoDao {
 
-	/** テーブル名 */
-	public static final String TABLE_NAME = "USER_INFO";
-
 	/**
 	 * 作成
 	 * @param entity
