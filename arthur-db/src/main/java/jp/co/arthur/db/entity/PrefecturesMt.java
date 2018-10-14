@@ -2,6 +2,8 @@ package jp.co.arthur.db.entity;
 
 import java.io.Serializable;
 
+import jp.co.arthur.common.log.annotation.Ignore;
+
 public class PrefecturesMt implements Serializable {
 	/**
 	 *
@@ -27,6 +29,7 @@ public class PrefecturesMt implements Serializable {
 	 *
 	 * @mbg.generated Sun Oct 14 18:45:27 JST 2018
 	 */
+	@Ignore
 	private static final long serialVersionUID = 1L;
 
 	/**
